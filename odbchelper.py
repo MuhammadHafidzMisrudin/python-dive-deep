@@ -10,3 +10,7 @@ if __name__ == "__main__":
     "uid":"sa",
     "pwd":"/home/lordharambe/"}
     print buildConnectionString(myParams);
+    myParams["database"] = "slave";
+    print buildConnectionString(myParams);
+    myParams["pid"] = "2020";
+    print buildConnectionString(myParams);
