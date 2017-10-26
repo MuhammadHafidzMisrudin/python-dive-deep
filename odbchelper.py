@@ -4,6 +4,7 @@ def buildConnectionString(params):
     Returns string."""
     return "The connection strings are as follows:\n" + "; ".join(["%s = %s" % (k, v) for k, v in params.items()]);
 
+
 if __name__ == "__main__":
     myParams = {"server":"mpilgrim",
     "database":"master",
@@ -13,4 +14,6 @@ if __name__ == "__main__":
     myParams["database"] = "slave";
     print buildConnectionString(myParams);
     myParams["pid"] = "2020";
-    print buildConnectionString(myParams);
+    newParams =  buildConnectionString(myParams);
+    print newParams;
+    #print sorted(newParams.keys())
