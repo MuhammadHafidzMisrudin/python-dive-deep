@@ -2,7 +2,8 @@ def buildConnectionString(params):
     """Build a connection string from a dictionary of parameters.
 
     Returns string."""
-    return "The connection strings are as follows:\n" + "; ".join(["%s = %s" % (k, v) for k, v in params.items()]);
+    #return "The connection strings are as follows:\n" + "; ".join(["%s = %s" % (k, v) for k, v in params.items()]);
+    return "; ".join(["%s = %s" % (k, v) for k, v in params.items()]);
 
 
 if __name__ == "__main__":
@@ -16,4 +17,6 @@ if __name__ == "__main__":
     myParams["pid"] = "2020";
     newParams =  buildConnectionString(myParams);
     print newParams;
-    #print sorted(newParams.keys())
+    newParamsList = newParams.split(";");
+    print newParamsList;
+    #print sorted()
