@@ -3,14 +3,14 @@ def buildConnectionString(params):
 
     Returns string."""
     #return "The connection strings are as follows:\n" + "; ".join(["%s = %s" % (k, v) for k, v in params.items()]);
-    return "; ".join(["%s = %s" % (k, v) for k, v in params.items()]);
+    return "; ".join(["%s=%s" % (k, v) for k, v in params.items()]);
 
 
 if __name__ == "__main__":
     myParams = {"server":"mpilgrim",
     "database":"master",
     "uid":"sa",
-    "pwd":"/home/lordharambe/"}
+    "pwd":"secret"}
     print buildConnectionString(myParams);
     myParams["database"] = "slave";
     print buildConnectionString(myParams);
@@ -19,4 +19,7 @@ if __name__ == "__main__":
     print newParams;
     newParamsList = newParams.split(";");
     print newParamsList;
+    #print newParamsList.items();
+    print tuple(newParamsList);
     #print sorted()
+    #print newParamsList.keys();
