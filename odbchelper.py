@@ -19,7 +19,4 @@ if __name__ == "__main__":
     print newParams;
     newParamsList = newParams.split(";");
     print newParamsList;
-    #print newParamsList.items();
     print tuple(newParamsList);
-    #print sorted()
-    #print newParamsList.keys();
