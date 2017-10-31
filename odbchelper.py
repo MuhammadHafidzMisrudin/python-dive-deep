@@ -29,3 +29,7 @@ if __name__ == "__main__":
     print "print added new item in a dictionary: ", newDict
     del newDict["Key1"];
     print "delete one item by key: ", newDict;
+
+    aList = ["a","j","x","d","n"];
+    print "before sorted: ", aList;
+    print "after sorted: ", sorted(aList);
