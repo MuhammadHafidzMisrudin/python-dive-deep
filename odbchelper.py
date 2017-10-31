@@ -13,19 +13,19 @@ if __name__ == "__main__":
     "pwd":"secret"}
     print buildConnectionString(myParams);
     myParams["database"] = "slave";
-    print buildConnectionString(myParams);
+    #print buildConnectionString(myParams);
     myParams["pid"] = "2020";
     newParams =  buildConnectionString(myParams);
-    print newParams;
+    #print newParams;
     newParamsList = newParams.split(";");
     print newParamsList;
-    print tuple(newParamsList);
+    #print tuple(newParamsList);
 
     newDict = {}
     newDict["key1"] = "value1";
     newDict["key1"] = "value1_1"
     print "print  new dictionary: ", newDict
     newDict["Key1"] = "value2";
-    print "print  new dictionary: ", newDict
+    print "print added new item in a dictionary: ", newDict
     del newDict["Key1"];
-    print newDict;
+    print "delete one item by key: ", newDict;
