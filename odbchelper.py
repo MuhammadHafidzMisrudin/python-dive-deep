@@ -23,4 +23,7 @@ if __name__ == "__main__":
 
     newDict = {}
     newDict["key1"] = "value1";
+    newDict["key1"] = "value1_1"
+    print "print  new dictionary: ", newDict
+    newDict["Key1"] = "value2";
     print "print  new dictionary: ", newDict
