@@ -20,3 +20,7 @@ if __name__ == "__main__":
     newParamsList = newParams.split(";");
     print newParamsList;
     print tuple(newParamsList);
+
+    newDict = {}
+    newDict["key1"] = "value1";
+    print "print  new dictionary: ", newDict
