@@ -33,3 +33,5 @@ if __name__ == "__main__":
     aList = ["a","j","x","d","n"];
     print "before sorted: ", aList;
     print "after sorted: ", sorted(aList);
+    aList.append("cool");
+    print "Append a new element", aList
