@@ -38,3 +38,5 @@ if __name__ == "__main__":
     aList.append("motherfucker");
     print "Append a 2nd element", aList
     print "a list sorted after append: ", sorted(aList);
+
+    createTuple = ("a","b","c","d","hack","my","anus","brah")
