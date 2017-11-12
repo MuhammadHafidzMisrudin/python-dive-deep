@@ -17,7 +17,7 @@ if __name__ == "__main__":
     myParams["pid"] = "2020";
     newParams =  buildConnectionString(myParams);
     #print newParams;
-    newParamsList = newParams.split(";");
+    newParamsList = newParams.split("; ");
     print (newParamsList);
     #print tuple(newParamsList);
 
@@ -44,3 +44,13 @@ if __name__ == "__main__":
     createTuple = createTuple + ("myAnus",)
     print ("after new element added: ", createTuple);
     print ("sorting tuple: ", sorted(createTuple));
+
+    paramsTwo = {"server":"mpilgrim", "database":"master","uid":"sa", "pwd":"secret"}
+    paramsListTwo = ["manu","barca","real","manc","avl","val", "get"]
+    print ("declaring paramsTwo: ", paramsTwo.items());
+    print ("declaring paramsListTwo: ", paramsListTwo);
+
+    paramsListTwo.sort();
+    print ("sorting paramsTwo: ", sorted(paramsTwo.items()));
+    print ("paramsTwo after sorted and return to original position: ", paramsTwo);
+    print ("paramsListTwo after sorted using sort():", paramsListTwo);
