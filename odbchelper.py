@@ -42,4 +42,5 @@ if __name__ == "__main__":
     createTuple = ("a","b","c","d","hack","my","anus","brah")
     print "original tuple: ", createTuple;
     createTuple = createTuple + ("myAnus",)
-    print "after new element added: ", createTuple
+    print "after new element added: ", createTuple;
+    print "sorting tuple: ", sorted(createTuple);
