@@ -11,36 +11,36 @@ if __name__ == "__main__":
     "database":"master",
     "uid":"sa",
     "pwd":"secret"}
-    print buildConnectionString(myParams);
+    print (buildConnectionString(myParams));
     myParams["database"] = "slave";
     #print buildConnectionString(myParams);
     myParams["pid"] = "2020";
     newParams =  buildConnectionString(myParams);
     #print newParams;
     newParamsList = newParams.split(";");
-    print newParamsList;
+    print (newParamsList);
     #print tuple(newParamsList);
 
     newDict = {}
     newDict["key1"] = "value1";
     newDict["key1"] = "value1_1"
-    print "print  new dictionary: ", newDict
+    print ("print  new dictionary: ", newDict);
     newDict["Key1"] = "value2";
-    print "print added new item in a dictionary: ", newDict
+    print ("print added new item in a dictionary: ", newDict);
     del newDict["Key1"];
-    print "delete one item by key: ", newDict;
+    print ("delete one item by key: ", newDict);
 
     aList = ["a","j","x","d","n"];
-    print "before sorted: ", aList;
-    print "after sorted: ", sorted(aList);
+    print ("before sorted: ", aList);
+    print ("after sorted: ", sorted(aList));
     aList.append("cool");
-    print "Append a new element", aList
+    print ("Append a new element", aList);
     aList.append("motherfucker");
-    print "Append a 2nd element", aList
-    print "a list sorted after append: ", sorted(aList);
+    print ("Append a 2nd element", aList);
+    print ("a list sorted after append: ", sorted(aList));
 
     createTuple = ("a","b","c","d","hack","my","anus","brah")
-    print "original tuple: ", createTuple;
+    print ("original tuple: ", createTuple);
     createTuple = createTuple + ("myAnus",)
-    print "after new element added: ", createTuple;
-    print "sorting tuple: ", sorted(createTuple);
+    print ("after new element added: ", createTuple);
+    print ("sorting tuple: ", sorted(createTuple));
