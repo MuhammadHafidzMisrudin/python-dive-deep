@@ -54,3 +54,6 @@ if __name__ == "__main__":
     print ("sorting paramsTwo: ", sorted(paramsTwo.items()));
     print ("paramsTwo after sorted and return to original position: ", paramsTwo);
     print ("paramsListTwo after sorted using sort():", paramsListTwo);
+
+    voidList = []
+    print ("dir (built-in function) - Returns all the methods of a (void) list: \n", dir(voidList));
