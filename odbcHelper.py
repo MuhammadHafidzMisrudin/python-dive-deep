@@ -57,3 +57,6 @@ if __name__ == "__main__":
 
     voidList = []
     print ("dir (built-in function) - Returns all the methods of a (void) list: \n", dir(voidList));
+
+    horsemen = ["war","calvary","knightmen"]
+    print("str - returns data into a string of horsemen: \n", str(horsemen));
