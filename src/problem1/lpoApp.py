@@ -6,13 +6,17 @@ from tkinter import *
 from tkinter import ttk, messagebox
 from statistics import mean, median
 from datetime import date
+import lpoDB
 
 
 class lpoApp:
 
 
 def main():
-    pass
+
+    root = Tk()
+    app = lpoApp(root)
+    root.mainloop()
 
 if __name__ == '__main__':
     main()
