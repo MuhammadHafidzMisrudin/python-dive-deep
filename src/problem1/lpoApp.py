@@ -14,9 +14,9 @@ class lpoApp:
 
 def main():
 
-    root = Tk()
-    app = lpoApp(root)
-    root.mainloop()
+    root = Tk() # to create a new top-level window for the GUI and store it in a variable (object)
+    app = lpoApp(root) # root (object) is passed to the lpoApp constructor
+    root.mainloop() # mainloop() gets invoked so that the GUI enters into the tk event loop
 
 if __name__ == '__main__':
     main()
