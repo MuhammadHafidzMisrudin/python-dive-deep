@@ -12,15 +12,19 @@ import lpoDB
 class lpoApp:
 
     def __init__(self, master):
+        # init constructor method to handle initialisations for objects/variables and GUI method
         pass
 
     def _createGUI(self):
+        # method to build the user interface
         pass
 
     def _submit_callback(self):
+        # method to handle a submit Button
         pass
 
     def _safe_close(self):
+        # method to handle everything to be shut down properly (exit)
         pass
 
 def main():
