@@ -28,8 +28,12 @@ class lpoApp:
         pass
 
     def _safe_close(self):
+        '''
         # method to handle everything to be shut down properly (exit), when user closes the application window
-        pass
+          note: This is called when the user closes the GUI. It ensures the database is properly shut down first
+        '''
+        self.database.close()
+        self.master.destroy()
 
 def main():
 
