@@ -24,7 +24,7 @@ class lpoApp:
         pass
 
     def _safe_close(self):
-        # method to handle everything to be shut down properly (exit)
+        # method to handle everything to be shut down properly (exit), when user closes the application window
         pass
 
 def main():
