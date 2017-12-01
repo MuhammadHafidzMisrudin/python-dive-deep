@@ -11,6 +11,17 @@ import lpoDB
 
 class lpoApp:
 
+    def __init__(self, master):
+        pass
+
+    def _createGUI(self):
+        pass
+
+    def _submit_callback(self):
+        pass
+
+    def _safe_close(self):
+        pass
 
 def main():
 
