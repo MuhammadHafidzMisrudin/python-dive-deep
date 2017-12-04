@@ -15,13 +15,16 @@ class lpoApp:
         # init constructor method to handle initialisations for objects/variables and GUI method
 
         self.master = master # stores the Tkinter top-level window object as an internal object called, master
-        self._createGUI() # invokes the GUI handler
+        self._createGUI() # initialises and invokes the GUI handler
         self.database = lpoDB.lpoDB() # creates and stores a new database object from the lpoDB module
         self.master.protocol("WM_DELETE_WINDOW", self._safe_close) # configures master window to capture the event the user closes the application to execute _safe_close method
 
     def _createGUI(self):
         # method to build the user interface
-        pass
+        # 1 - configures style of the GUI
+        bgcolor = '#CCCCFF'
+        self.master.configure(background = bgcolor)
+        self.master.title('Lake Pend Oreille')
 
     def _submit_callback(self):
         # method to handle a submit Button
