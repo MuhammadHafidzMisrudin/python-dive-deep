@@ -23,8 +23,12 @@ class lpoApp:
         # method to build the user interface
         # 1 - configures style of the GUI
         bgcolor = '#CCCCFF'
-        self.master.configure(background = bgcolor)
+        self.master.configure(background = bgcolor) # property window background color
         self.master.title('Lake Pend Oreille')
+        self.master.resizable(False, False) # property for resizable window
+
+        self.style = ttk.Style() # creates  a tkinter style object to configure the background color and font attributes
+        
 
     def _submit_callback(self):
         # method to handle a submit Button
