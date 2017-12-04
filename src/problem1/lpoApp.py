@@ -28,9 +28,9 @@ class lpoApp:
         self.master.resizable(False, False) # property for resizable window
 
         self.style = ttk.Style() # creates  a tkinter style object to configure the background color and font attributes
-        self.style.configure('TFrame', background = bgcolor)
-        self.style.configure('TButton', background = bgcolor, font = ('Arial Black', 10))
-        self.style.configure('TLabel', background = bgcolor, font = ('Arial Black', 10))
+        self.style.configure('TFrame', background = bgcolor) # configures background color for frame
+        self.style.configure('TButton', background = bgcolor, font = ('Arial Black', 10)) # configures background color for button
+        self.style.configure('TLabel', background = bgcolor, font = ('Arial Black', 10)) # configures background color for label
         self.style.configure('Status.TLabel1', background = bgcolor, font = ('Arial', 10))
         self.style.configure('Result.TLabel1', background = bgcolor, font = ('Courier', 10))
 
