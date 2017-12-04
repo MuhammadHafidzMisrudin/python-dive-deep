@@ -21,14 +21,18 @@ class lpoApp:
 
     def _createGUI(self):
         # method to build the user interface
-        # 1 - configures style of the GUI
+        ### 1 - configures style of the GUI
         bgcolor = '#CCCCFF'
         self.master.configure(background = bgcolor) # property window background color
         self.master.title('Lake Pend Oreille')
         self.master.resizable(False, False) # property for resizable window
 
         self.style = ttk.Style() # creates  a tkinter style object to configure the background color and font attributes
-        
+        self.style.configure('TFrame', background = bgcolor)
+        self.style.configure('TButton', background = bgcolor, font = ('Arial Black', 10))
+        self.style.configure('TLabel', background = bgcolor, font = ('Arial Black', 10))
+        self.style.configure('Status.TLabel1', background = bgcolor, font = ('Arial', 10))
+        self.style.configure('Result.TLabel1', background = bgcolor, font = ('Courier', 10))
 
     def _submit_callback(self):
         # method to handle a submit Button
