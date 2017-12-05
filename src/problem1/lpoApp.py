@@ -59,6 +59,8 @@ class lpoApp:
         self.end_month = StringVar()
         self.end_year = StringVar()
 
+        self.months = ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')
+
     def _submit_callback(self):
         # method to handle a submit Button
         pass
