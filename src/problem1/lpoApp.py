@@ -41,6 +41,11 @@ class lpoApp:
         self.logo = PhotoImage(file = 'lpo_logo.gif') # create a photo image object (xxx.gif) using PhotoImage()
         ttk.Label(self.frame_header, image = self.logo).pack() # display it using label inside of the header frame
 
+        # create a frame to store the input control
+        ### 3 - create and display frame to hold user input widgets
+        self.frame_input = ttk.Frame(self.master) # create the input frame to display the start and end dates
+        self.frame_input.pack(side = TOP)
+
     def _submit_callback(self):
         # method to handle a submit Button
         pass
