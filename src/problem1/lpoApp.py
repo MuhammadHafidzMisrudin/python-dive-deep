@@ -50,6 +50,13 @@ class lpoApp:
         ttk.Label(self.frame_input, text = 'Start Date:').grid(row = 0, column = 1, columnspan = 3, sticky = 'sw')
         ttk.Label(self.frame_input, text = 'End Date:').grid(row = 0, column = 5, columnspan = 3, sticky = 'sw')
 
+        # create tkinter string variables for the day, month and year for both the start and end dates
+        self.start_day = StringVar()
+        self.start_month = StringVar()
+        self.start_year = StringVar()
+        self.end_day = StringVar()
+        self.end_month = StringVar()
+        self.end_year = StringVar()
 
     def _submit_callback(self):
         # method to handle a submit Button
