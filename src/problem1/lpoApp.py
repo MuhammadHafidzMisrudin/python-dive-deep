@@ -51,6 +51,7 @@ class lpoApp:
         ttk.Label(self.frame_input, text = 'End Date:').grid(row = 0, column = 5, columnspan = 3, sticky = 'sw')
 
         # create tkinter string variables for the day, month and year for both the start and end dates
+        # which to store the input values of the start and end dates
         self.start_day = StringVar()
         self.start_month = StringVar()
         self.start_year = StringVar()
