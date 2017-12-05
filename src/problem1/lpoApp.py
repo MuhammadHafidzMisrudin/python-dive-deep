@@ -38,6 +38,8 @@ class lpoApp:
         ### 2 - create and display header frame with image
         self.frame_header = ttk.Frame(self.master) # create a tkinter frame header object to hold the header image
         self.frame_header.pack(side = TOP) # place the header image at the top of the window
+        self.logo = PhotoImage(file = 'lpo_logo.gif')
+        ttk.Label(self.frame_header, image = self.logo).pack()
 
     def _submit_callback(self):
         # method to handle a submit Button
