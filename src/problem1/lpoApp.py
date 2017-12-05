@@ -59,6 +59,7 @@ class lpoApp:
         self.end_month = StringVar()
         self.end_year = StringVar()
 
+        # create a list of strings that contains each value of the 12 months for user input for spinbox widgets.
         self.months = ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')
 
     def _submit_callback(self):
