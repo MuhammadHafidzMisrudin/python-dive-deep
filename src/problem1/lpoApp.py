@@ -46,6 +46,11 @@ class lpoApp:
         self.frame_input = ttk.Frame(self.master) # create the input frame to display the start and end dates
         self.frame_input.pack(side = TOP)
 
+        # diplay text string for start and end dates using tk Label inside of the frame
+        ttk.Label(self.frame_input, text = 'Start Date:').grid(row = 0, column = 1, columnspan = 3, sticky = 'sw')
+        ttk.Label(self.frame_input, text = 'End Date:').grid(row = 0, column = 5, columnspan = 3, sticky = 'sw')
+
+
     def _submit_callback(self):
         # method to handle a submit Button
         pass
