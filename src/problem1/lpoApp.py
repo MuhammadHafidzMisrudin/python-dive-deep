@@ -64,6 +64,7 @@ class lpoApp:
 
         Spinbox(self.frame_input, from_ = 1, to = 31, textvariable = self.start_day, width = 2, font = 'Courier 12').grid(row = 1, column = 1)
         Spinbox(self.frame_input, values = self.months, textvariable = self.start_month, width = 3, font ='Courier 12').grid(row = 1, column = 2)
+        Spinbox(self.frame_input, from_ = 2001, to = date.today().year, textvariable = self.start_year, width = 4, font = 'Courier 12').grid(row = 1, column = 3)
 
     def _submit_callback(self):
         # method to handle a submit Button
