@@ -62,6 +62,9 @@ class lpoApp:
         # create a list of strings that contains each value of the 12 months for user input for spinbox widgets.
         self.months = ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')
 
+        Spinbox(self.frame_input, from_ = 1, to = 31, textvariable = self.start_day, width = 2, font = 'Courier 12').grid(row = 1, column = 1)
+        Spinbox(self.frame_input, values = self.months, textvariable = self.start_month, width = 3, font ='Courier 12').grid(row = 1, column = 2)
+
     def _submit_callback(self):
         # method to handle a submit Button
         pass
