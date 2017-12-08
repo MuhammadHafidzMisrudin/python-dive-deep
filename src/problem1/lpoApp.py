@@ -71,10 +71,13 @@ class lpoApp:
         Spinbox(self.frame_input, values = self.months, textvariable = self.end_month, width = 3, font = 'Courier 12').grid(row = 1, column = 6)
         Spinbox(self.frame_input, from_ = 2007, to = date.today().year, textvariable = self.end_year, width = 4, font = 'Courier 12').grid(row = 1, column = 7)
 
-        # after creating the Spinboxes, set their default values to represent the current date
+        # after creating the Spinboxes, set their default values to represent the current date,
+        # retrieve dates using the today method from the datetime module
         ### 5 - set default values (for Spinboxes widgets) for the start and end dates to today
         self.start_day.set(date.today().day)
         self.start_month.set(self.months[date.today().month-1])
+        self.start_year.set(date.today().year)
+
 
     def _submit_callback(self):
         # method to handle a submit Button
