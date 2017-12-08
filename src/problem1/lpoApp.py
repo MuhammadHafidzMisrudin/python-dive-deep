@@ -77,7 +77,10 @@ class lpoApp:
         self.start_day.set(date.today().day)
         self.start_month.set(self.months[date.today().month-1])
         self.start_year.set(date.today().year)
-
+        self.end_day.set(date.today().day)
+        self.end_month.set(self.months[date.today().month-1])
+        self.end_year.set(date.today().year)
+        
 
     def _submit_callback(self):
         # method to handle a submit Button
