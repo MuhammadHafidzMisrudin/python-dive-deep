@@ -62,13 +62,14 @@ class lpoApp:
         # create a list of strings that contains each value of the 12 months for user input for spinbox widgets.
         self.months = ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')
 
+        # create individual Spinbox widgets for the user to input values which are tied to each of those tkinter string variables (objects)
         ### 4 - create a Spinbox for each day, month, year of the start and end dates
         Spinbox(self.frame_input, from_ = 1, to = 31, textvariable = self.start_day, width = 2, font = 'Courier 12').grid(row = 1, column = 1)
         Spinbox(self.frame_input, values = self.months, textvariable = self.start_month, width = 3, font = 'Courier 12').grid(row = 1, column = 2)
         Spinbox(self.frame_input, from_ = 2001, to = date.today().year, textvariable = self.start_year, width = 4, font = 'Courier 12').grid(row = 1, column = 3)
         Spinbox(self.frame_input, from_ = 1, to = 31, textvariable = self.end_day, width = 2, font = 'Courier 12').grid(row = 1, column = 5)
         Spinbox(self.frame_input, values = self.months, textvariable = self.end_month, width = 3, font = 'Courier 12').grid(row = 1, column = 6)
-        Spinbox(self.frame_input, from_ = 20001, to = date.today().year, textvariable = self.end_day, width = 4, font = 'Courier 12').grid(row = 1, column = 7)
+        Spinbox(self.frame_input, from_ = 2001, to = date.today().year, textvariable = self.end_year, width = 4, font = 'Courier 12').grid(row = 1, column = 7)
 
     def _submit_callback(self):
         # method to handle a submit Button
