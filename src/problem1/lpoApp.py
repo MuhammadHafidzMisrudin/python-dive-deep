@@ -80,7 +80,10 @@ class lpoApp:
         self.end_day.set(date.today().day)
         self.end_month.set(self.months[date.today().month-1])
         self.end_year.set(date.today().year)
-        
+
+        ttk.Label(self.frame_input).grid(row = 1, column = 0, padx = 5)
+        ttk.Label(self.frame_input).grid(row = 1, column = 4, padx = 5)
+        ttk.Label(self.frame_input).grid(row = 1, column = 8, padx = 5)
 
     def _submit_callback(self):
         # method to handle a submit Button
