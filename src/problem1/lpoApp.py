@@ -81,6 +81,7 @@ class lpoApp:
         self.end_month.set(self.months[date.today().month-1])
         self.end_year.set(date.today().year)
 
+        ### 6 - create these Labels (using the tkinter grid geometry manager) for padding purposes
         ttk.Label(self.frame_input).grid(row = 1, column = 0, padx = 5)
         ttk.Label(self.frame_input).grid(row = 1, column = 4, padx = 5)
         ttk.Label(self.frame_input).grid(row = 1, column = 8, padx = 5)
