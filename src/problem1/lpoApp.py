@@ -94,7 +94,11 @@ class lpoApp:
         ttk.Button(self.frame_input, text = 'Submit', command = self._submit_callback).grid(row = 2, column = 0, columnspan = 9, pady = 5)
 
         ### 8 - create a frame to display results, but do not show it yet
+        # a frame to hold the results and populates it with the appropriate Labels.
         self.frame_result = ttk.Frame(self.master)
+
+        ttk.Label(self.frame_result, text = 'Mean:').grid(row = 1, column = 0, padx = 5)
+        ttk.Label(self.frame_result, text = 'Median:').grid(row = 2, column = 0, padx = 5)
 
     def _submit_callback(self):
         # method to handle a submit Button
