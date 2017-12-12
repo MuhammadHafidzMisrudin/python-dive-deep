@@ -88,6 +88,9 @@ class lpoApp:
         ttk.Label(self.frame_input).grid(row = 1, column = 4, padx = 5)
         ttk.Label(self.frame_input).grid(row = 1, column = 8, padx = 5)
 
+        ### 7 - create the submit button
+        ttk.Button(self.frame_input, text = 'Submit', command = self._submit_callback).grid(row = 2, column = 0, columnspan = 9, pady = 5)
+
     def _submit_callback(self):
         # method to handle a submit Button
         pass
