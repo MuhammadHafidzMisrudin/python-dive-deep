@@ -95,8 +95,10 @@ class lpoApp:
 
         ### 8 - create a frame to display results, but do not show it yet
         # a frame to hold the results and populates it with the appropriate Labels.
+        # it doesn't make it visible for the user to see the results frame unless there are valid results to display to them
         self.frame_result = ttk.Frame(self.master)
 
+        # create Label widgets for the Mean and Median results
         ttk.Label(self.frame_result, text = 'Mean:').grid(row = 1, column = 0, padx = 5)
         ttk.Label(self.frame_result, text = 'Median:').grid(row = 2, column = 0, padx = 5)
 
