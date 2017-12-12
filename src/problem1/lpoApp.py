@@ -90,9 +90,10 @@ class lpoApp:
         #ttk.Label(self.frame_input).grid(row = 1, column = 8, padx = 5)
 
         ### 7 - create the submit button
+        # The command property of the Submit button is configured to execute the submit_callback() whenever the button event is triggered
         ttk.Button(self.frame_input, text = 'Submit', command = self._submit_callback).grid(row = 2, column = 0, columnspan = 9, pady = 5)
 
-        # create a frame to display results, but do not show it yet
+        ### 8 - create a frame to display results, but do not show it yet
         self.frame_result = ttk.Frame(self.master)
 
     def _submit_callback(self):
