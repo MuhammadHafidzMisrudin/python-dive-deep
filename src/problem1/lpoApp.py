@@ -93,7 +93,8 @@ class lpoApp:
         ttk.Button(self.frame_input, text = 'Submit', command = self._submit_callback).grid(row = 2, column = 0, columnspan = 9, pady = 5)
 
         # create a frame to display results, but do not show it yet
-        
+        self.frame_result = ttk.Frame(self.master)
+
     def _submit_callback(self):
         # method to handle a submit Button
         pass
