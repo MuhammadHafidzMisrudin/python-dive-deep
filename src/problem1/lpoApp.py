@@ -82,11 +82,12 @@ class lpoApp:
         self.end_year.set(date.today().year)
 
         ### 6 - create these Labels (using the tkinter grid geometry manager) for padding purposes
+        # add few extra labels to help space things out for Spinboxes widgets
         ttk.Label(self.frame_input).grid(row = 1, column = 0, padx = 5)
         ttk.Label(self.frame_input).grid(row = 1, column = 4, padx = 5)
         ttk.Label(self.frame_input).grid(row = 1, column = 8, padx = 5)
-        ttk.Label(self.frame_input).grid(row = 1, column = 4, padx = 5)
-        ttk.Label(self.frame_input).grid(row = 1, column = 8, padx = 5)
+        #ttk.Label(self.frame_input).grid(row = 1, column = 4, padx = 5)
+        #ttk.Label(self.frame_input).grid(row = 1, column = 8, padx = 5)
 
         ### 7 - create the submit button
         ttk.Button(self.frame_input, text = 'Submit', command = self._submit_callback).grid(row = 2, column = 0, columnspan = 9, pady = 5)
