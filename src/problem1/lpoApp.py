@@ -108,7 +108,7 @@ class lpoApp:
         ttk.Label(self.frame_result, text = 'Barometric\nPressure:', justify = CENTER).grid(row = 0, column = 3, sticky = 'e', padx = 5)
         ttk.Label(self.frame_result, text = 'Wind\nSpeed:', justify = CENTER).grid(row = 0, column = 1, sticky = 'e', padx = 5)
 
-        ### 9
+        ### 9 -  create tkinter string variables for each of the six types of weather statistics
         self.air_temp_mean = StringVar()
         self.air_temp_median = StringVar()
 
