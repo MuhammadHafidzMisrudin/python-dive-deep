@@ -98,13 +98,15 @@ class lpoApp:
         # it doesn't make it visible for the user to see the results frame unless there are valid results to display to them
         self.frame_result = ttk.Frame(self.master)
 
+        # 5 Labels are static and simply identify and the rows and columns of the result table
         # create Label widgets for the Mean and Median results
         ttk.Label(self.frame_result, text = 'Mean:').grid(row = 1, column = 0, padx = 5)
         ttk.Label(self.frame_result, text = 'Median:').grid(row = 2, column = 0, padx = 5)
 
-        ttk.Label(self.frame_result, text = 'Air\nTemp:', justify = 'CENTER').grid(row = 0, column = 2, sticky = 'e', padx = 5)
-        ttk.Label(self.frame_result, text = 'Barometric\nPressure:', justify = 'CENTER').grid(row = 0, column = 3, sticky = 'e', padx = 5)
-        ttk.Label(self.frame_result, text = 'Wind\nSpeed:', justify = 'CENTER').grid(row = 0, column = 1, sticky = 'e', padx = 5)
+        # create Label widgets for the Air Temperature, Barometric Pressure, Wind Speed results
+        ttk.Label(self.frame_result, text = 'Air\nTemp:', justify = CENTER).grid(row = 0, column = 2, sticky = 'e', padx = 5)
+        ttk.Label(self.frame_result, text = 'Barometric\nPressure:', justify = CENTER).grid(row = 0, column = 3, sticky = 'e', padx = 5)
+        ttk.Label(self.frame_result, text = 'Wind\nSpeed:', justify = CENTER).grid(row = 0, column = 1, sticky = 'e', padx = 5)
 
 
     def _submit_callback(self):
