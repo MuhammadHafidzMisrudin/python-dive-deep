@@ -103,6 +103,9 @@ class lpoApp:
         ttk.Label(self.frame_result, text = 'Median:').grid(row = 2, column = 0, padx = 5)
 
         ttk.Label(self.frame_result, text = 'Air\nTemp:', justify = 'CENTER').grid(row = 0, column = 2, sticky = 'e', padx = 5)
+        ttk.Label(self.frame_result, text = 'Barometric\nPressure:', justify = 'CENTER').grid(row = 0, column = 3, sticky = 'e', padx = 5)
+        ttk.Label(self.frame_result, text = 'Wind\nSpeed:', justify = 'CENTER').grid(row = 0, column = 1, sticky = 'e', padx = 5)
+
 
     def _submit_callback(self):
         # method to handle a submit Button
