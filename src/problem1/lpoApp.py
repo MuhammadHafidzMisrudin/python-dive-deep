@@ -116,6 +116,8 @@ class lpoApp:
         self.wind_speed_mean = StringVar()
         self.wind_speed_median = StringVar()
 
+        ### 10 - create 6 Label widgets which are each tied to initialised individual string variables (objects) using the textvariable property
+        # When the results are stored into string variables, the Labels will be automatically updated to display them
         ttk.Label(self.frame_result, textvariable = self.air_temp_mean, style = 'Result.TLabel').grid(row = 1, column = 2)
         ttk.Label(self.frame_result, textvariable = self.air_temp_median, style = 'Result.TLabel').grid(row = 2, column = 2)
         ttk.Label(self.frame_result, textvariable = self.barometric_press_mean, style = 'Result.TLabel').grid(row = 1, column = 3)
