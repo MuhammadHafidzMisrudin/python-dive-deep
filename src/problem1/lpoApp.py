@@ -31,8 +31,8 @@ class lpoApp:
         self.style.configure('TFrame', background = bgcolor) # configures background color for frame
         self.style.configure('TButton', background = bgcolor, font = ('Arial Black', 10)) # configures background color for button
         self.style.configure('TLabel', background = bgcolor, font = ('Arial Black', 10)) # configures background color for label
-        self.style.configure('Status.TLabel1', background = bgcolor, font = ('Arial', 10))
-        self.style.configure('Result.TLabel1', background = bgcolor, font = ('Courier', 10))
+        self.style.configure('Status.TLabel', background = bgcolor, font = ('Arial', 10))
+        self.style.configure('Result.TLabel', background = bgcolor, font = ('Courier', 10))
 
         # create a tk frame widget
         ### 2 - create and display header frame with image
@@ -115,6 +115,8 @@ class lpoApp:
         self.barometric_press_median = StringVar()
         self.wind_speed_mean = StringVar()
         self.wind_speed_median = StringVar()
+
+        ttk.Label(self.frame_result, textvariable = self.air_temp_mean, style = 'Result.TLabel').grid(row = 1, column = 2)
 
 
     def _submit_callback(self):
