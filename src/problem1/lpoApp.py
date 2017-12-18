@@ -142,6 +142,7 @@ class lpoApp:
             messagebox.showerror(title = 'ValueError', message = ('INVALID DATE\n Correct format is "DD Mon YYYY"'))
 
             self.start_day.set(date.today().day)
+            self.start_month.set(self.months[date.today().month-1])
             return None
 
     def _safe_close(self):
