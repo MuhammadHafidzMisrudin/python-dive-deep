@@ -142,9 +142,14 @@ class lpoApp:
             messagebox.showerror(title = 'ValueError', message = ('INVALID DATE\n Correct format is "DD Mon YYYY"'))
 
             # reset default start and end dates to today
+            # reset the date to the current dates, then return out of the submit_callback method
             self.start_day.set(date.today().day)
             self.start_month.set(self.months[date.today().month-1])
-            return None
+            self.start_year.set(date.today().year)
+            self.end_day.set(date.today().day)
+            self.end_month.set(self.months[date.today().month-1])
+            self.end_year.set(date.today().year)
+            return
 
     def _safe_close(self):
         '''
