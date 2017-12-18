@@ -20,7 +20,7 @@ class lpoApp:
         self.master.protocol("WM_DELETE_WINDOW", self._safe_close) # configures master window to capture the event the user closes the application to execute _safe_close method
 
     def _createGUI(self):
-        # method to build the user interface
+        # method to build the graphical user interface
         ### 1 - configures style of the GUI
         bgcolor = '#CCCCFF'
         self.master.configure(background = bgcolor) # property window background color
