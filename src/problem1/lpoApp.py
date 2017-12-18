@@ -128,13 +128,20 @@ class lpoApp:
 
     def _submit_callback(self):
         # method to handle a submit Button
+
         ### 1 - check that the input values are a real, legitimate date
-        # implement try..except statement for handling exception for input values
+        # it retrieves the values for day, month and year from the Spinboxes, t
+        # then it attempts to interpret and convert those values into a datetime object using the date method
+        # implement try..except statement for handling exception for valid input values,
+        # because if the user inputs values which do not represent an actual date, then the date method will throw a value error exception
         try:
             start = date(int(self.start_year.get()), self.months.index(self.start_month.get()) + 1, int(self.start_day.get()))
             end = date(int(self.end_year.get()), self.months.index(self.end_month.get()) + 1, int(self.end_day.get()))
         except ValueError as e:
+            # display a pop-up (error) message due to invalid date
             messagebox.showerror(title = 'ValueError', message = ('INVALID DATE\n Correct format is "DD Mon YYYY"'))
+
+            self.start_day.set(date.today().day)
             return None
 
     def _safe_close(self):
