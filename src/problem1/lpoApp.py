@@ -129,6 +129,7 @@ class lpoApp:
     def _submit_callback(self):
         # method to handle a submit Button
         ### 1 - check that the input values are a real, legitimate date
+        # implement try..except statement for handling exception for input values
         try:
             start = date(int(self.start_year.get()), self.months.index(self.start_month.get()) + 1, int(self.start_day.get()))
             end = date(int(self.end_year.get()), self.months.index(self.end_month.get()) + 1, int(self.end_day.get()))
