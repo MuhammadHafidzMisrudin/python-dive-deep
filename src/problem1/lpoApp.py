@@ -59,7 +59,7 @@ class lpoApp:
         self.end_month = StringVar()
         self.end_year = StringVar()
 
-        # create a list of strings that contains each value of the 12 months for user input for spinbox widgets.
+        # create a list (tuple) of strings that contains each value of the 12 months for user input for spinbox widgets.
         self.months = ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')
 
         # create individual Spinboxes widgets for the user to input values which are tied to each of those tkinter string variables (objects)
@@ -128,6 +128,7 @@ class lpoApp:
 
     def _submit_callback(self):
         # method to handle a submit Button
+        ### 1 - check that the input values are a real, legitimate date
         try:
             start = date(int(self.start_year.get()), self.months.index(self.start_month.get()) + 1, int(self.start_day.get()))
             end = date(int(self.end_year.get()), self.months.index(self.end_month.get()) + 1, int(self.end_day.get()))
