@@ -141,6 +141,7 @@ class lpoApp:
             # display a pop-up (error) message due to invalid date
             messagebox.showerror(title = 'ValueError', message = ('INVALID DATE\n Correct format is "DD Mon YYYY"'))
 
+            # reset default start and end dates to today
             self.start_day.set(date.today().day)
             self.start_month.set(self.months[date.today().month-1])
             return None
