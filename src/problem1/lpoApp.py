@@ -128,7 +128,9 @@ class lpoApp:
 
     def _submit_callback(self):
         # method to handle a submit Button
-        pass
+        try:
+            start = date(int(self.start_year.get()), self.months.index(self.start_month.get()) + 1, int(self.start_day.get()))
+            end = date(int(self.end_year.get()), self.months.index(self.end_month.get()) + 1, int(self.end_day.get()))
 
     def _safe_close(self):
         '''
