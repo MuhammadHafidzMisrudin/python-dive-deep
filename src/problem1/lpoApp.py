@@ -154,6 +154,7 @@ class lpoApp:
         ### 2 - check that date range is valid
         if (start < date(2007, 1, 12)) or (end > date.today()) or (start > end):
             messagebox.showerror(title = 'ValueError', message = ('INVALID DATE RANGE\n'))
+            return
 
     def _safe_close(self):
         '''
