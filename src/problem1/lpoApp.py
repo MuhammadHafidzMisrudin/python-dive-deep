@@ -135,8 +135,8 @@ class lpoApp:
         # implement try..except statement for handling exception for valid input values,
         # because if the user inputs values which do not represent an actual date, then the date method will throw a value error exception
         try:
-            start = date(int(self.start_year.get()), self.months.index(self.start_month.get()) + 1, int(self.start_day.get()))
-            end = date(int(self.end_year.get()), self.months.index(self.end_month.get()) + 1, int(self.end_day.get()))
+            start = date(int(self.start_year.get()), self.months.index(self.start_month.get()) + 1, int(self.start_day.get())) # format: date(Y, M, D)
+            end = date(int(self.end_year.get()), self.months.index(self.end_month.get()) + 1, int(self.end_day.get())) # format: date(Y, M, D)
         except ValueError as e:
             # display a pop-up (error) message due to invalid date
             messagebox.showerror(title = 'ValueError', message = ('INVALID DATE\n Correct format is "DD Mon YYYY"'))
@@ -150,6 +150,10 @@ class lpoApp:
             self.end_month.set(self.months[date.today().month-1])
             self.end_year.set(date.today().year)
             return
+
+        ### 2 - check that date range is valid
+        if (start < date(2007, 1, 12)) or (end > date.today()) or (start > end):
+            messagebox.showerror(title = 'ValueError', message = ('INVALID DATE RANGE\n'))
 
     def _safe_close(self):
         '''
