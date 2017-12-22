@@ -156,7 +156,7 @@ class lpoApp:
             messagebox.showerror(title = 'ValueError', message = ('INVALID DATE RANGE\nStart Date: {}\nEnd Date: {}\nDate must be between 2009-1-1 and {}.\n Start Date must be <= End Date').format(start, end, date.today()))
             return
 
-        ### 3 - initialises a list/tuple (for data from the database) for data extraction
+        ### 3 - initialises a list of data (to extract data from the database)
         data = list(self.database.get_data_for_range(start, end))
 
     def _safe_close(self):
