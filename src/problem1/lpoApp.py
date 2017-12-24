@@ -127,22 +127,22 @@ class lpoApp:
 
 
     def _submit_callback(self):
-        # method to handle a submit Button
+        # method to handle a submit Button.
 
-        ### 1 - check that the input values are a real, legitimate date
-        # it retrieves the values for day, month and year from the Spinboxes, t
-        # then it attempts to interpret and convert those values into a datetime object using the date method
+        ### 1 - check that the input values are a real, legitimate date.
+        # it retrieves the values for day, month and year from the Spinboxes (widgets),
+        # then it attempts to interpret and convert those values into a datetime object using the date method.
         # implement try..except statement for handling exception for valid input values,
-        # because if the user inputs values which do not represent an actual date, then the date method will throw a value error exception
+        # because if the user inputs values which do not represent an actual date, then the date method will throw a value error exception.
         try:
             start = date(int(self.start_year.get()), self.months.index(self.start_month.get()) + 1, int(self.start_day.get())) # format: date(Y, M, D)
             end = date(int(self.end_year.get()), self.months.index(self.end_month.get()) + 1, int(self.end_day.get())) # format: date(Y, M, D)
         except ValueError as e:
-            # display a pop-up (error) message due to invalid date
+            # display a pop-up (error) message due to invalid date.
             messagebox.showerror(title = 'ValueError', message = ('INVALID DATE\n Correct format is "DD Mon YYYY"'))
 
-            # reset default start and end dates to today
-            # reset the date to the current dates, then return out of the submit_callback method
+            # reset default start and end dates to today.
+            # reset the date to the current dates, then return out of the submit_callback method.
             self.start_day.set(date.today().day)
             self.start_month.set(self.months[date.today().month-1])
             self.start_year.set(date.today().year)
@@ -151,15 +151,19 @@ class lpoApp:
             self.end_year.set(date.today().year)
             return
 
-        ### 2 - check that date range is valid
-        # it does some range checking on the input dates
+        ### 2 - check that date range is valid.
+        # it does some range checking on the input dates.
         # the online database (start) date begins on the 1st of January 2009, if the user inputs a start date before that,
-        # or an end date after that (current date) or, if a start date is after the end date, it will display an error message to the user and return out of the submit_callback()
+        # or an end date after that (current date) or, if a start date is after the end date, it will display an error message to the user and return out of the submit_callback().
         if (start < date(2009, 1, 1)) or (end > date.today()) or (start > end):
             messagebox.showerror(title = 'ValueError', message = ('INVALID DATE RANGE\nStart Date: {}\nEnd Date: {}\nDate must be between 2009-1-1 and {}.\n Start Date must be <= End Date').format(start, end, date.today()))
             return
 
-        ### 3 - initialises a list of data (to extract data from the database)
+        ### 3 - initialise a list of data (to extract data from the online database).
+        # after it verifies the input dates are both valid in format in range, next line is to retrieve the weather data to calculate statistics for the requested dates.
+        # get_data_for_range() gets invoked from lpo database module (lpoDB.py) which returns a generator object with a dictionary containing each of the 3 types of weather data,
+        # for the database entry in the requested range of dates.
+        # convert the generator object into a list and store it in an object variable called "data".
         data = list(self.database.get_data_for_range(start, end))
 
         ### 4
