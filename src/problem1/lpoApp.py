@@ -159,6 +159,10 @@ class lpoApp:
         ### 3 - initialises a list of data (to extract data from the database)
         data = list(self.database.get_data_for_range(start, end))
 
+        ### 4
+        if data != []:
+            dict_of_lists = dict(Air_Temp = [], Barometric_Press = [], Wind_Speed = [])
+
     def _safe_close(self):
         '''
         # method to handle everything to be shut down properly (exit), when user closes the application window
