@@ -176,6 +176,10 @@ class lpoApp:
             # these lists will be used to feed the mean and median statistics functions.
             dict_of_lists = dict(Air_Temp = [], Barometric_Press = [], Wind_Speed = [])
 
+            for entry in data:
+                for key in dict_of_lists.keys():
+                    dict_of_lists[key].append(entry[key])
+
     def _safe_close(self):
         '''
         # method to handle everything to be shut down properly (exit), when user closes the application window
