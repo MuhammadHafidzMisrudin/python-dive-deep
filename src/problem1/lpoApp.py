@@ -168,6 +168,12 @@ class lpoApp:
 
         ### 4 - check to make sure that the application is able to retrieve data from the database.
         if data != []:
+
+            ### 5 - the lists will hold all values from the date range for each weather parameter (statistics).
+            # create a dictionary with 3 (empty) lists, one for each weather parameter.
+            # then append the retrieved data to the appropriate lists, so each list will contain all of the data values for the weather parameter,
+            # it represents over the entire requested range of dates.
+            # these lists will be used to feed the mean and median statistics functions.
             dict_of_lists = dict(Air_Temp = [], Barometric_Press = [], Wind_Speed = [])
 
     def _safe_close(self):
