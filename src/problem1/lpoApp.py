@@ -166,7 +166,7 @@ class lpoApp:
         # convert the generator object into a list and store it in an object variable called "data".
         data = list(self.database.get_data_for_range(start, end))
 
-        ### 4
+        ### 4 - check to make sure that the application is able to retrieve data from the database.
         if data != []:
             dict_of_lists = dict(Air_Temp = [], Barometric_Press = [], Wind_Speed = [])
 
