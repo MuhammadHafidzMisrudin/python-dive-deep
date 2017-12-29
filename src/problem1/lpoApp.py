@@ -184,7 +184,7 @@ class lpoApp:
 
             result = {}
             for key in dict_of_lists.keys():
-                result[key] = dict(mean = mean(dict_of_lists[key]), median(dict_of_lists[key]))
+                result[key] = dict(mean = mean(dict_of_lists[key]), median = median(dict_of_lists[key]))
 
     def _safe_close(self):
         '''
