@@ -153,10 +153,10 @@ class lpoApp:
 
         ### 2 - check that date range is valid.
         # it does some range checking on the input dates.
-        # the online database (start) date begins on the 1st of January 2009, if the user inputs a start date before that,
+        # the online database (start) date begins on the 10th of January 2010, if the user inputs a start date before that,
         # or an end date after that (current date) or, if a start date is after the end date, it will display an error message to the user and return out of the submit_callback().
-        if (start < date(2009, 1, 1)) or (end > date.today()) or (start > end):
-            messagebox.showerror(title = 'ValueError', message = ('INVALID DATE RANGE\nStart Date: {}\nEnd Date: {}\nDate must be between 2009-1-1 and {}.\n Start Date must be <= End Date').format(start, end, date.today()))
+        if (start < date(2010, 1, 10)) or (end > date.today()) or (start > end):
+            messagebox.showerror(title = 'ValueError', message = ('INVALID DATE RANGE\nStart Date: {}\nEnd Date: {}\nDate must be between 2010-10-1 and {}.\n Start Date must be <= End Date').format(start, end, date.today()))
             return
 
         ### 3 - initialise a list of data (to extract data from the online database).
