@@ -176,6 +176,7 @@ class lpoApp:
             # these lists will be used to feed the mean and median statistics functions.
             dict_of_lists = dict(Air_Temp = [], Barometric_Press = [], Wind_Speed = [])
 
+            ### 6 - implement for loop cycles through each of entries in the data list  which represent dictionaries of values for individual database entries.
             for entry in data:
                 for key in dict_of_lists.keys():
                     dict_of_lists[key].append(entry[key])
