@@ -170,13 +170,14 @@ class lpoApp:
         if data != []:
 
             ### 5 - the lists will hold all values from the date range for each weather parameter (statistics).
-            # create a dictionary with 3 (empty) lists, one for each weather parameter.
+            # create a dictionary with 3 (empty) lists, one for each weather parameter (each type).
             # then append the retrieved data to the appropriate lists, so each list will contain all of the data values for the weather parameter,
             # it represents over the entire requested range of dates.
             # these lists will be used to feed the mean and median statistics functions.
             dict_of_lists = dict(Air_Temp = [], Barometric_Press = [], Wind_Speed = [])
 
             ### 6 - implement for loop cycles through each of entries in the data list  which represent dictionaries of values for individual database entries.
+            # it indexes out each of the weather data types  using the "key" names, and then it appends the values to the appropriate lists for my dictionary of lists.
             for entry in data:
                 for key in dict_of_lists.keys():
                     dict_of_lists[key].append(entry[key])
