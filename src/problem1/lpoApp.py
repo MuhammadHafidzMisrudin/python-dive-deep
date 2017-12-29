@@ -182,6 +182,10 @@ class lpoApp:
                 for key in dict_of_lists.keys():
                     dict_of_lists[key].append(entry[key])
 
+            result = {}
+            for key in dict_of_lists.keys():
+                result[key] = dict(mean = mean(dict_of_lists[key]), median(dict_of_lists[key]))
+
     def _safe_close(self):
         '''
         # method to handle everything to be shut down properly (exit), when user closes the application window
