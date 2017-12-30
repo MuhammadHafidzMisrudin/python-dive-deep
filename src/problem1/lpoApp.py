@@ -182,6 +182,7 @@ class lpoApp:
                 for key in dict_of_lists.keys():
                     dict_of_lists[key].append(entry[key])
 
+            ### 7 - calculate the mean & median for each type of data
             result = {}
             for key in dict_of_lists.keys():
                 result[key] = dict(mean = mean(dict_of_lists[key]), median = median(dict_of_lists[key]))
