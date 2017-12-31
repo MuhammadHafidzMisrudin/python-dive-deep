@@ -188,7 +188,7 @@ class lpoApp:
                 result[key] = dict(mean = mean(dict_of_lists[key]), median = median(dict_of_lists[key]))
 
             ### 8 - set StringVar (individual initialised objects) associated with the results labels (widgets)
-            self.air_temp_mean.set(result['Air_Temp']['mean'])
+            self.air_temp_mean.set('{0:.2f}'.format(result['Air_Temp']['mean']))
 
     def _safe_close(self):
         '''
