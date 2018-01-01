@@ -187,12 +187,13 @@ class lpoApp:
             # the for loop uses the keys method, .keys() to cycle through each of the elements in the dictionary of lists,
             # calculates the mean and median for each each list using functions from the statistics module.
             # those collective (mean and median) values are packed into a dictionary which it then stores in the results dictionary.
-            # result (variable) - dictionary of dictionaries. 
+            # result (variable) - dictionary of dictionaries.
             result = {}
             for key in dict_of_lists.keys():
                 result[key] = dict(mean = mean(dict_of_lists[key]), median = median(dict_of_lists[key]))
 
-            ### 8 - set StringVar (individual initialised objects) associated with the results labels (widgets)
+            ### 8 - set StringVar (individual string variable that are initialised in _createGUI()) associated with the results labels (widgets)
+            # store the results into their respected string variables by using the set method, .set()
             self.air_temp_mean.set('{0:.2f}'.format(result['Air_Temp']['mean']))
 
     def _safe_close(self):
