@@ -183,6 +183,9 @@ class lpoApp:
                     dict_of_lists[key].append(entry[key])
 
             ### 7 - calculate the mean & median for each type of data; store results of statistics calculation in dictionaries (of lists).
+            # create a blank dictionary to hold the statistical results for each weather parameter.
+            # the for loop uses the keys method, .keys() to cycle through each of the elements in the dictionary of lists,
+            # calculates the mean and median for each each list using functions from the statistics module.
             result = {}
             for key in dict_of_lists.keys():
                 result[key] = dict(mean = mean(dict_of_lists[key]), median = median(dict_of_lists[key]))
