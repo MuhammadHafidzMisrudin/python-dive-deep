@@ -195,6 +195,7 @@ class lpoApp:
             ### 8 - set StringVar (individual string variable that are initialised in _createGUI()) associated with the results labels (widgets)
             # store the results into their respected string variables by using the set method, .set()
             self.air_temp_mean.set('{0:.2f}'.format(result['Air_Temp']['mean']))
+            self.air_temp_median.set(result['Air_Temp']['median'])
 
     def _safe_close(self):
         '''
