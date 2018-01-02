@@ -198,8 +198,8 @@ class lpoApp:
             self.air_temp_median.set('{0:.2f}'.format(result['Air_Temp']['median']))
             self.barometric_press_mean.set('{0:.2f}'.format(result['Barometric_Press']['mean']))
             self.barometric_press_median.set('{0:.2f}'.format(result['Barometric_Press']['median']))
-            self.wind_speed_mean.set(result['Wind_Speed']['mean'])
-            self.wind_speed_median.set(result['Wind_Speed']['mean'])
+            self.wind_speed_mean.set('{0:.2f}'.format(result['Wind_Speed']['mean']))
+            self.wind_speed_median.set('{0:.2f}'.format(result['Wind_Speed']['mean']))
 
     def _safe_close(self):
         '''
