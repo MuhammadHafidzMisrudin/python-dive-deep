@@ -196,8 +196,8 @@ class lpoApp:
             # store the results into their respected string variables by using the set method, .set()
             self.air_temp_mean.set('{0:.2f}'.format(result['Air_Temp']['mean']))
             self.air_temp_median.set('{0:.2f}'.format(result['Air_Temp']['median']))
-            self.barometric_press_mean.set(result['Barometric_Press']['mean'])
-            self.barometric_press_median.set(result['Barometric_Press']['median'])
+            self.barometric_press_mean.set('{0:.2f}'.format(result['Barometric_Press']['mean']))
+            self.barometric_press_median.set('{0:.2f}'.format(result['Barometric_Press']['median']))
             self.wind_speed_mean.set(result['Wind_Speed']['mean'])
             self.wind_speed_median.set(result['Wind_Speed']['mean'])
 
