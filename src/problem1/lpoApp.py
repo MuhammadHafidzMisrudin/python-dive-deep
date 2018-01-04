@@ -203,6 +203,8 @@ class lpoApp:
 
             ### 9 - display the results frame
             self.frame_result.pack(side = TOP)
+        else:
+            self.frame_result.forget()
 
     def _safe_close(self):
         '''
