@@ -201,6 +201,7 @@ class lpoApp:
             self.wind_speed_mean.set('{0:.2f}'.format(result['Wind_Speed']['mean']))
             self.wind_speed_median.set('{0:.2f}'.format(result['Wind_Speed']['mean']))
 
+            ### 9 - display the results frame
             self.frame_result.pack(side = TOP)
 
     def _safe_close(self):
