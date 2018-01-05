@@ -204,7 +204,8 @@ class lpoApp:
             ### 9 - display the results frame
             self.frame_result.pack(side = TOP)
         else:
-            self.frame_result.forget() ### 9 - if the (client) request did not process to produce result, it will hide the results frame
+            ### 9 - if the (client) request did not process to produce result, it will hide the results frame
+            self.frame_result.forget() # .forget() method gets invoked to hide the results frame
 
     def _safe_close(self):
         '''
