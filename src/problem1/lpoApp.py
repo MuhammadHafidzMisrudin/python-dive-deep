@@ -205,10 +205,12 @@ class lpoApp:
             self.wind_speed_median.set('{0:.2f}'.format(result['Wind_Speed']['mean']))
 
             ### 9 - display the results frame
+            # execute the .pack() method to the display the frame which contains the results.
             self.frame_result.pack(side = TOP)
         else:
             ### 10 - if the (client) request did not process to produce result, it will hide the results frame
-            self.frame_result.forget() # .forget() method gets invoked to hide the results frame
+            # if the program failed to retrieve any data from the database.
+            self.frame_result.forget() # .forget() method gets invoked to hide the results frame from the display.
 
     def _safe_close(self):
         '''
