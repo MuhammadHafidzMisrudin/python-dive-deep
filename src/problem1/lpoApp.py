@@ -194,6 +194,9 @@ class lpoApp:
 
             ### 8 - set StringVar (individual string variable that are initialised in _createGUI()) associated with the results labels (widgets)
             # store the results into their respected string variables by using the set method, .set()
+            # since the results are stored in a dictionary inside of dictionary, 2 set of square brackets to index the values.
+            # the 1st index is for the outer dictionary, which has keys for the types of weather data.
+            # the 2nd index is for the inner dictionary, which have keys for each type of statistics.
             self.air_temp_mean.set('{0:.2f}'.format(result['Air_Temp']['mean']))
             self.air_temp_median.set('{0:.2f}'.format(result['Air_Temp']['median']))
             self.barometric_press_mean.set('{0:.2f}'.format(result['Barometric_Press']['mean']))
@@ -204,7 +207,7 @@ class lpoApp:
             ### 9 - display the results frame
             self.frame_result.pack(side = TOP)
         else:
-            ### 9 - if the (client) request did not process to produce result, it will hide the results frame
+            ### 10 - if the (client) request did not process to produce result, it will hide the results frame
             self.frame_result.forget() # .forget() method gets invoked to hide the results frame
 
     def _safe_close(self):
