@@ -204,7 +204,7 @@ class lpoApp:
             ### 9 - display the results frame
             self.frame_result.pack(side = TOP)
         else:
-            self.frame_result.forget()
+            self.frame_result.forget() ### 9 - if the (client) request did not process to produce result, it will hide the results frame
 
     def _safe_close(self):
         '''
@@ -218,7 +218,7 @@ def main():
 
     root = Tk() # to create a new top-level window for the GUI and store it in a variable (object)
     app = lpoApp(root) # root (object) is passed to the lpoApp constructor
-    root.mainloop() # mainloop() gets invoked so that the GUI enters into the tk event loop
+    root.mainloop() # mainloop() method gets invoked so that the GUI enters into the tk event loop
 
 if __name__ == '__main__':
     main()
