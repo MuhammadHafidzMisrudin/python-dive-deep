@@ -18,9 +18,9 @@ class lpoDB():
     '''
 
     def __init__(self, **kwargs):
-        # kwargs - keyword arguments
-        self.filename = kwargs.get('filename', 'lpo.db')
-        self.table = kwargs.get('table', 'Weather')
+        # kwargs - keyword arguments (the caller can use to specify the name of the database file and the name of the table).
+        self.filename = kwargs.get('filename', 'lpo.db') # class variable with default values.
+        self.table = kwargs.get('table', 'Weather') # class variable with default values.
 
     def __iter__(self):
         pass
