@@ -7,6 +7,15 @@ import sqlite3
 import lpoWeb
 
 class lpoDB():
+    '''
+    A database module class to keep of Wind Speed, Air Temperature, and Barometric Pressure for specific dates.
+    The module's functionalities:
+    - Open/create database and configure table with the appropriate columns.
+    - Determine which dates have complete/incomplete data available in the database.
+    - Use lpoWeb module to download incomplete data from online API (navy.mil).
+    - Cache downloaded data into the database for future use.
+    - Return data for all requested range of dates to the lpoApp module. 
+    '''
 
     def __init__(self, **kwargs):
         pass
