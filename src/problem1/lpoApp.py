@@ -125,7 +125,6 @@ class lpoApp:
         ttk.Label(self.frame_result, textvariable = self.wind_speed_mean, style = 'Result.TLabel').grid(row = 1, column = 1)
         ttk.Label(self.frame_result, textvariable = self.wind_speed_median, style = 'Result.TLabel').grid(row = 2, column = 1)
 
-
     def _submit_callback(self):
         # method to handle a submit Button.
 

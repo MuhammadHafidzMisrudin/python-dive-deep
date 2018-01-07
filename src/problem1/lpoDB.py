@@ -7,6 +7,7 @@ import sqlite3
 import lpoWeb
 
 class lpoDB():
+
     def __init__(self, **kwargs):
         pass
 
@@ -27,3 +28,6 @@ class lpoDB():
 
     def close(self):
         pass
+
+def test():
+    pass
