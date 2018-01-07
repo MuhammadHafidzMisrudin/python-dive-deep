@@ -14,11 +14,13 @@ class lpoDB():
     - Determine which dates have complete/incomplete data available in the database.
     - Use lpoWeb module to download incomplete data from online API (navy.mil).
     - Cache downloaded data into the database for future use.
-    - Return data for all requested range of dates to the lpoApp module. 
+    - Return data for all requested range of dates to the lpoApp module.
     '''
 
     def __init__(self, **kwargs):
-        pass
+        # kwargs - keyword arguments
+        self.filename = kwargs.get('filename', 'lpo.db')
+        self.table = kwargs.get('table', 'Weather')
 
     def __iter__(self):
         pass
