@@ -22,8 +22,8 @@ class lpoDB():
         self.filename = kwargs.get('filename', 'lpo.db') # class variable with default values.
         self.table = kwargs.get('table', 'Weather') # class variable with default values.
 
-        self.db = sqlite3.connect(self.filename)
-        self.db.row_factory = sqlite3.Row
+        self.db = sqlite3.connect(self.filename) # sqlite3.connect() method is called to open the database.
+        self.db.row_factory = sqlite3.Row # the "Row" method to configure the row_factory for retrieving data.
 
     def __iter__(self):
         pass
