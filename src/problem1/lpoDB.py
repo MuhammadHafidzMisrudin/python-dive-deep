@@ -24,6 +24,7 @@ class lpoDB():
 
         self.db = sqlite3.connect(self.filename) # sqlite3.connect() method is called to open the database.
         self.db.row_factory = sqlite3.Row # the "Row" method to configure the row_factory for retrieving data.
+        self.db.execute('''CREATE TABLE IF NOT EXISTS {} (Date TEXT, Time TEXT, Status TEXT, Air_Temp FLOAT, Barometric_Press FLOAT, Wind_Speed FLOAT)''')
 
     def __iter__(self):
         pass
