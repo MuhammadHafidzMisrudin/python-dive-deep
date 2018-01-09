@@ -8,13 +8,13 @@ import lpoWeb
 
 class lpoDB():
     '''
-    A database module class to keep of Wind Speed, Air Temperature, and Barometric Pressure for specific dates.
-    The module's functionalities:
-    - Open/create database and configure table with the appropriate columns.
-    - Determine which dates have complete/incomplete data available in the database.
-    - Use lpoWeb module to download incomplete data from online API (navy.mil).
-    - Cache downloaded data into the database for future use.
-    - Return data for all requested range of dates to the lpoApp module.
+    # A database module class to keep of Wind Speed, Air Temperature, and Barometric Pressure for specific dates.
+    # The module's functionalities:
+      - Open/create database and configure table with the appropriate columns.
+      - Determine which dates have complete/incomplete data available in the database.
+      - Use lpoWeb module to download incomplete data from online API (navy.mil).
+      - Cache downloaded data into the database for future use.
+      - Return data for all requested range of dates to the lpoApp module.
     '''
 
     def __init__(self, **kwargs):
@@ -27,6 +27,9 @@ class lpoDB():
         self.db.execute('''CREATE TABLE IF NOT EXISTS {} (Date TEXT, Time TEXT, Status TEXT, Air_Temp FLOAT, Barometric_Press FLOAT, Wind_Speed FLOAT)'''.format(self.table))
 
     def __iter__(self):
+        '''
+        # This method is to return generator object with dictionaries (dicts) of entire DB contents.
+        '''
         pass
 
     def get_data_for_range(self, start, end):
