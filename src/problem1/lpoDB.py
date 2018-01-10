@@ -30,7 +30,7 @@ class lpoDB():
         '''
         # This method is to return generator object with dictionaries (dicts) of entire DB contents.
         '''
-        cursor = self.db.execute('SELECT * FROM {} ORDER BY  Date, Time')
+        cursor = self.db.execute('SELECT * FROM {} ORDER BY  Date, Time'.format(self.table))
 
     def get_data_for_range(self, start, end):
         pass
