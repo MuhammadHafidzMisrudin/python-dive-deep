@@ -40,6 +40,7 @@ class lpoDB():
         containing all available Air_Temp, Barometric_Press, and Wind_Speed.
         NOTE - It updates the database as necessary first.
         '''
+        dates_to_update = [] # create a list for dates.
         pass
 
     def _get_status_for_range(self, start. end):
