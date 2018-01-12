@@ -36,7 +36,9 @@ class lpoDB():
 
     def get_data_for_range(self, start, end):
         '''
-        # Given a start and end date, method to return a generator of dicts (dictionaries)
+        # Given a start and end date, method to return a generator of dicts (dictionaries),
+        containing all available Air_Temp, Barometric_Press, and Wind_Speed.
+        NOTE - It updates the database as necessary first.
         '''
         pass
 
