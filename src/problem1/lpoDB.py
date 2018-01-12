@@ -35,6 +35,9 @@ class lpoDB():
             yield dict(row)
 
     def get_data_for_range(self, start, end):
+        '''
+        # Given a start and end date, method to return a generator of dicts (dictionaries)
+        '''
         pass
 
     def _get_status_for_range(self, start. end):
