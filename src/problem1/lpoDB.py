@@ -41,6 +41,8 @@ class lpoDB():
         NOTE - It updates the database as necessary first.
         '''
         dates_to_update = [] # create a list for dates.
+
+        # determine pre-2007 dates to update and append to list.
         for year in range(start.year, 2007):
             if list(self._get_status_for_range(date(year, 1, 12), date(year, 1, 12))) == []:
                 dates_to_update.append(date(year, 1, 12))
