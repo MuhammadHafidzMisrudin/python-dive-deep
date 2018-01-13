@@ -66,10 +66,10 @@ class lpoApp:
         ### 4 - create a Spinbox for each day, month, year of the start and end dates
         Spinbox(self.frame_input, from_ = 1, to = 31, textvariable = self.start_day, width = 2, font = 'Courier 12').grid(row = 1, column = 1)
         Spinbox(self.frame_input, values = self.months, textvariable = self.start_month, width = 3, font = 'Courier 12').grid(row = 1, column = 2)
-        Spinbox(self.frame_input, from_ = 2009, to = date.today().year, textvariable = self.start_year, width = 4, font = 'Courier 12').grid(row = 1, column = 3)
+        Spinbox(self.frame_input, from_ = 2010, to = date.today().year, textvariable = self.start_year, width = 4, font = 'Courier 12').grid(row = 1, column = 3)
         Spinbox(self.frame_input, from_ = 1, to = 31, textvariable = self.end_day, width = 2, font = 'Courier 12').grid(row = 1, column = 5)
         Spinbox(self.frame_input, values = self.months, textvariable = self.end_month, width = 3, font = 'Courier 12').grid(row = 1, column = 6)
-        Spinbox(self.frame_input, from_ = 2009, to = date.today().year, textvariable = self.end_year, width = 4, font = 'Courier 12').grid(row = 1, column = 7)
+        Spinbox(self.frame_input, from_ = 2010, to = date.today().year, textvariable = self.end_year, width = 4, font = 'Courier 12').grid(row = 1, column = 7)
 
         # after creating the Spinboxes, set their default values to represent the current date,
         # retrieve dates using the today method from the datetime module
@@ -134,8 +134,8 @@ class lpoApp:
         # implement try..except statement for handling exception for valid input values,
         # because if the user inputs values which do not represent an actual date, then the date method will throw a value error exception.
         try:
-            start = date(int(self.start_year.get()), self.months.index(self.start_month.get()) + 1, int(self.start_day.get())) # format: date(Y, M, D)
-            end = date(int(self.end_year.get()), self.months.index(self.end_month.get()) + 1, int(self.end_day.get())) # format: date(Y, M, D)
+            start = date(int(self.start_year.get()), self.months.index(self.start_month.get()) + 1, int(self.start_day.get())) # format: date(Year, Month, Day)
+            end = date(int(self.end_year.get()), self.months.index(self.end_month.get()) + 1, int(self.end_day.get())) # format: date(Year, Month, Day)
         except ValueError as e:
             # display a pop-up (error) message due to invalid date.
             messagebox.showerror(title = 'ValueError', message = ('INVALID DATE\n Correct format is "DD Mon YYYY"'))
@@ -154,8 +154,9 @@ class lpoApp:
         # it does some range checking on the input dates.
         # the online database (start) date begins on the 10th of January 2010, if the user inputs a start date before that,
         # or an end date after that (current date) or, if a start date is after the end date, it will display an error message to the user and return out of the submit_callback().
+        # format: date(Year, Month, Day)
         if (start < date(2010, 1, 10)) or (end > date.today()) or (start > end):
-            messagebox.showerror(title = 'ValueError', message = ('INVALID DATE RANGE\nStart Date: {}\nEnd Date: {}\nDate must be between 2010-10-1 and {}.\n Start Date must be <= End Date').format(start, end, date.today()))
+            messagebox.showerror(title = 'ValueError', message = ('INVALID DATE RANGE\nStart Date: {}\nEnd Date: {}\nDate must be between 2010-1-10 and {}.\n Start Date must be <= End Date').format(start, end, date.today()))
             return
 
         ### 3 - initialise a list of data (to extract data from the online database).

@@ -47,6 +47,13 @@ class lpoDB():
             if list(self._get_status_for_range(date(year, 1, 12), date(year, 1, 12))) == []:
                 dates_to_update.append(date(year, 1, 12))
 
+        if (end.year > 2006) and (start >= date(2007, 1, 1)):
+            temp_start = start
+        elif (end.year > 2006) and (start < date(2007, 1, 1)):
+            temp_start = date(2007, 1, 1)
+        else:
+            temp_start = end
+
     def _get_status_for_range(self, start. end):
         pass
 
