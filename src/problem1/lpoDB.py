@@ -40,6 +40,7 @@ class lpoDB():
         containing all available Air_Temp, Barometric_Press, and Wind_Speed.
         NOTE - It updates the database as necessary first.
         '''
+
         dates_to_update = [] # create a list for dates.
 
         ### 1 - determine pre-2007 dates to update and append to list.
@@ -47,12 +48,14 @@ class lpoDB():
             if list(self._get_status_for_range(date(year, 1, 12), date(year, 1, 12))) == []:
                 dates_to_update.append(date(year, 1, 12))
 
+        ### 2 - determine post-2006 dates to update and append to list.
         if (end.year > 2006) and (start >= date(2007, 1, 1)):
             temp_start = start
         elif (end.year > 2006) and (start < date(2007, 1, 1)):
             temp_start = date(2007, 1, 1)
         else:
             temp_start = end
+        
 
     def _get_status_for_range(self, start. end):
         pass
