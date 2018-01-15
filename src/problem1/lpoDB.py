@@ -54,10 +54,13 @@ class lpoDB():
         elif (end.year > 2006) and (start < date(2007, 1, 1)):
             temp_start = date(2007, 1, 1)
         else:
+            # otherwise, start and end dates are both pre-2007.
             temp_start = end
 
-        delta = end - temp_start
+        ### 3
+        delta = end - temp_start # create a variable, delta.
         for d in range(delta.days + 1):
+            # note: the +1 makes it inclusive
             dates_to_update(temp_start + timedelta(days = d))
 
     def _get_status_for_range(self, start. end):
