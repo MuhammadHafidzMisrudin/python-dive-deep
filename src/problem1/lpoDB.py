@@ -55,7 +55,8 @@ class lpoDB():
             temp_start = date(2007, 1, 1)
         else:
             temp_start = end
-        
+
+        delta = end - temp_start
 
     def _get_status_for_range(self, start. end):
         pass
