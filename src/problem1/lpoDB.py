@@ -46,7 +46,7 @@ class lpoDB():
         ### 1 - determine pre-2007 dates to update and append to list.
         for year in range(start.year, 2007):
             if list(self._get_status_for_range(date(year, 1, 12), date(year, 1, 12))) == []:
-                dates_to_update.append(date(year, 1, 12))
+                dates_to_update.append(date(year, 1, 12)) # format: date(Year, Month, Day)
 
         ### 2 - determine post-2006 dates to update and append to list.
         if (end.year > 2006) and (start >= date(2007, 1, 1)):
@@ -57,6 +57,8 @@ class lpoDB():
             temp_start = end
 
         delta = end - temp_start
+        for d in range(delta.days + 1):
+            dates_to_update(temp_start + timedelta(days = d))
 
     def _get_status_for_range(self, start. end):
         pass
