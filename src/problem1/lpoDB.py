@@ -65,7 +65,7 @@ class lpoDB():
 
         statuses = list(self._get_status_for_range(temp_start, end))
 
-    def _get_status_for_range(self, start. end):
+    def _get_status_for_range(self, start, end):
         pass
 
     def _update_data_for_date(self, date, partial):
