@@ -65,6 +65,10 @@ class lpoDB():
 
         statuses = list(self._get_status_for_range(temp_start, end))
 
+        for entry in statuses:
+            if entry['Status'] ==  'COMPLETE':
+                dates_to_update.remove(datetime.strptime(str(entry['Date']), '%Y%m%d').date())
+
     def _get_status_for_range(self, start, end):
         pass
 
