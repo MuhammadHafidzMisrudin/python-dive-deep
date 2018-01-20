@@ -60,7 +60,7 @@ class lpoDB():
         ### 3 - generate a list of dates between temp_start and end.
         delta = end - temp_start # create a variable, delta.
         for d in range(delta.days + 1):
-            # note: the +1 makes it inclusive
+            # note: the +1 makes it inclusive.
             dates_to_update(temp_start + timedelta(days = d))
 
         statuses = list(self._get_status_for_range(temp_start, end))
@@ -70,6 +70,7 @@ class lpoDB():
                 dates_to_update.remove(datetime.strptime(str(entry['Date']), '%Y%m%d').date())
             elif entry['Status'] == 'PARTIAL':
                 try:
+                    # update for any new data first, then remove from dates_to_update list.
                     self._update_data_for_date(datetime.strptime(str(entry['Date']), '%Y%m%d').date(), True)
                 except:
                     raise dates_to_update.remove(datetime.strptime(str(entry['Date']), '%Y%m%d').date(), True)
