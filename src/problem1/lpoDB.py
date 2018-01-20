@@ -68,6 +68,11 @@ class lpoDB():
         for entry in statuses:
             if entry['Status'] ==  'COMPLETE':
                 dates_to_update.remove(datetime.strptime(str(entry['Date']), '%Y%m%d').date())
+            elif entry['Status'] == 'PARTIAL':
+                try:
+                    self._update_data_for_date(datetime.strptime(str(entry['Date']), '%Y%m%d').date(), True)
+                except:
+                    raise dates_to_update.remove(datetime.strptime(str(entry['Date']), '%Y%m%d').date(), True)
 
     def _get_status_for_range(self, start, end):
         pass
