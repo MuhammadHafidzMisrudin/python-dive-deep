@@ -65,7 +65,7 @@ class lpoDB():
 
         statuses = list(self._get_status_for_range(temp_start, end))
 
-        ### 4 -
+        ### 4 - remove all dates from dates_to_update that have a 'COMPLETE' or 'PARTIAL' status.
         for entry in statuses:
             if entry['Status'] ==  'COMPLETE':
                 dates_to_update.remove(datetime.strptime(str(entry['Date']), '%Y%m%d').date())
@@ -75,6 +75,8 @@ class lpoDB():
                     self._update_data_for_date(datetime.strptime(str(entry['Date']), '%Y%m%d').date(), True)
                 except:
                     raise dates_to_update.remove(datetime.strptime(str(entry['Date']), '%Y%m%d').date(), True)
+
+        return None
 
     def _get_status_for_range(self, start, end):
         pass
