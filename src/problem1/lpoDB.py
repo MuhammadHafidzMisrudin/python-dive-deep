@@ -77,6 +77,12 @@ class lpoDB():
                     raise dates_to_update.remove(datetime.strptime(str(entry['Date']), '%Y%m%d').date(), True)
 
         error_dates = []
+        for day in dates_to_update:
+            try:
+                self._update_data_for_date(day, False)
+            except ValueError as e:
+                error_dates.append(e)
+
         return None
 
     def _get_status_for_range(self, start, end):
