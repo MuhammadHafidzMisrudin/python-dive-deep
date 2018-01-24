@@ -76,7 +76,7 @@ class lpoDB():
                 except:
                     raise dates_to_update.remove(datetime.strptime(str(entry['Date']), '%Y%m%d').date(), True)
 
-        ### 5 - 
+        ### 5 - iterate through dates that were non-existent in DB and insert data.
         error_dates = []
         for day in dates_to_update:
             try:
