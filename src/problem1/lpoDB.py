@@ -84,6 +84,9 @@ class lpoDB():
             except ValueError as e:
                 error_dates.append(e)
 
+        if error_dates != []:
+            error_message = 'There were problems accessing data for the following dates.  They were not included in the result.\n'
+
         return None
 
     def _get_status_for_range(self, start, end):
