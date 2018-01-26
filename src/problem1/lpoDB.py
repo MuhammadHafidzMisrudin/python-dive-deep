@@ -88,6 +88,7 @@ class lpoDB():
             error_message = 'There were problems accessing data for the following dates.  They were not included in the result.\n'
             for day in error_dates:
                 error_message += '\n{}'.format(day)
+            messagebox.showwarning(title='Warning', message=error_message)
 
         return None
 
