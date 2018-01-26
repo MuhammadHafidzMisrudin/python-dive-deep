@@ -86,6 +86,8 @@ class lpoDB():
 
         if error_dates != []:
             error_message = 'There were problems accessing data for the following dates.  They were not included in the result.\n'
+            for day in error_dates:
+                error_message += '\n{}'.format(day)
 
         return None
 
