@@ -90,7 +90,7 @@ class lpoDB():
                 error_message += '\n{}'.format(day)
             messagebox.showwarning(title = 'Warning', message = error_message)
 
-        ### 6 - 
+        ### 6 - get Air_Temp, Barometric_Press, and Wind_Speed data from start/end dates range in database.
         cursor =  self.db.execute('''SELECT Air_Temp, Barometric_Press, Wind_Speed FROM {} WHERE Date BETWEEN {} AND {}'''.format(self.table, start.strftime('%Y%m%d'), end.strftime('%Y%m%d')))
         return None
 
