@@ -95,7 +95,7 @@ class lpoDB():
 
         for row in cursor:
             yield dict(row)
-        return None
+        #return None
 
     def _get_status_for_range(self, start, end):
         pass
