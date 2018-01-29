@@ -92,17 +92,13 @@ class lpoDB():
 
         ### 6 - get Air_Temp, Barometric_Press, and Wind_Speed data from start/end dates range in database.
         cursor =  self.db.execute('''SELECT Air_Temp, Barometric_Press, Wind_Speed FROM {} WHERE Date BETWEEN {} AND {}'''.format(self.table, start.strftime('%Y%m%d'), end.strftime('%Y%m%d')))
-
         for row in cursor:
             yield dict(row)
-        #return None
 
     def _get_status_for_range(self, start, end):
         cursor = self.db.execute('''SELECT DISTINCT Date, Status FROM {} WHERE Date BETWEEN {} AND {}'''.format(self.table, start.strftime('%Y%m%d'), end.strftime('%Y%m%d')))
-
         for row in cursor:
             yield dict(row)
-        return None
 
     def _update_data_for_date(self, date, partial):
         pass
