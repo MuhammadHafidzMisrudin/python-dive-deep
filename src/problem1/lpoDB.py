@@ -98,7 +98,7 @@ class lpoDB():
         #return None
 
     def _get_status_for_range(self, start, end):
-        cursor = self.db.execute('''SELECT DISTINCT Date, Status FROM {} WHERE Date BETWEEN {} AND {}''')
+        cursor = self.db.execute('''SELECT DISTINCT Date, Status FROM {} WHERE Date BETWEEN {} AND {}'''.format(self.table, start.strftime('%Y%m%d'), end.strftime('%Y%m%d')))
         pass
 
     def _update_data_for_date(self, date, partial):
