@@ -100,6 +100,8 @@ class lpoDB():
         # Given a start and end date, return a generator of dicts (dictionaries)
         containing all available Date and Status values.
         '''
+
+        ### 1 -
         cursor = self.db.execute('''SELECT DISTINCT Date, Status FROM {} WHERE Date BETWEEN {} AND {}'''.format(self.table, start.strftime('%Y%m%d'), end.strftime('%Y%m%d')))
         for row in cursor:
             yield dict(row)
