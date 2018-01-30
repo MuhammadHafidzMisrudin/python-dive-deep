@@ -36,7 +36,7 @@ class lpoDB():
 
     def get_data_for_range(self, start, end):
         '''
-        # Given a start and end date, method to return a generator of dicts (dictionaries),
+        # Given a start and end date, this method is to return a generator of dicts (dictionaries),
         containing all available Air_Temp, Barometric_Press, and Wind_Speed.
         NOTE - It updates the database as necessary first.
         '''
@@ -97,11 +97,11 @@ class lpoDB():
 
     def _get_status_for_range(self, start, end):
         '''
-        # Given a start and end date, return a generator of dicts (dictionaries)
+        # Given a start and end date, his method is to return a generator of dicts (dictionaries)
         containing all available Date and Status values.
         '''
 
-        ### 1 -
+        ### 1 - Dates/Statuses that already exist in DB (module).
         cursor = self.db.execute('''SELECT DISTINCT Date, Status FROM {} WHERE Date BETWEEN {} AND {}'''.format(self.table, start.strftime('%Y%m%d'), end.strftime('%Y%m%d')))
         for row in cursor:
             yield dict(row)
