@@ -108,7 +108,8 @@ class lpoDB():
 
     def _update_data_for_date(self, date, partial):
         if partial:
-            self.db.execute('DELETE FROM {} WHERE Date')
+            self.db.execute('DELETE FROM {} WHERE Date'.format(self.table, date.strftime('%Y%m%d')))
+            self.db.commit()
         return None
 
     def clear(self):
