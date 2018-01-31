@@ -110,6 +110,13 @@ class lpoDB():
         if partial:
             self.db.execute('DELETE FROM {} WHERE Date'.format(self.table, date.strftime('%Y%m%d')))
             self.db.commit()
+
+        try:
+            data = lpoWeb.get_data_for_date(date)
+        except Exception as e:
+            raise
+        else:
+            pass
         return None
 
     def clear(self):
