@@ -107,7 +107,9 @@ class lpoDB():
             yield dict(row)
 
     def _update_data_for_date(self, date, partial):
-        pass
+        if partial:
+            self.db.execute('DELETE FROM {} WHERE Date')
+        return None
 
     def clear(self):
         pass
