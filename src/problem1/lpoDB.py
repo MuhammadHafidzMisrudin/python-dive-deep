@@ -119,7 +119,13 @@ class lpoDB():
             pass
 
         for entry in data:
-            self.db.execute('''INSERT INTO {} (Date, Time, Status, Air_Temp, Barometric_Press, Wind_Speed) VALUES (?, ?, ?, ?, ?, ?)''')
+            self.db.execute('''INSERT INTO {} (Date, Time, Status, Air_Temp, Barometric_Press, Wind_Speed)
+                               VALUES (?, ?, ?, ?, ?, ?)'''.format(self.table), (entry['Date'].replace("_", "")
+                                                                                 entry['Time'],
+                                                                                 entry['Status'],
+                                                                                 entry['Air_Temp'],
+                                                                                 entry['Barometric_Press'],
+                                                                                 entry['Wind_Speed']))
         return None
 
     def clear(self):
