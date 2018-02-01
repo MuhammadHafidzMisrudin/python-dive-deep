@@ -117,6 +117,9 @@ class lpoDB():
             raise
         else:
             pass
+
+        for entry in data:
+            self.db.execute('''INSERT INTO {} (Date, Time, Status, Air_Temp, Barometric_Press, Wind_Speed) VALUES (?, ?, ?, ?, ?, ?)''')
         return None
 
     def clear(self):
