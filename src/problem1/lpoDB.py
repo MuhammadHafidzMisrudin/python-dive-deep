@@ -126,7 +126,7 @@ class lpoDB():
                                                                                  entry['Air_Temp'],
                                                                                  entry['Barometric_Press'],
                                                                                  entry['Wind_Speed']))
-        return None
+        self.db.commit()
 
     def clear(self):
         pass
