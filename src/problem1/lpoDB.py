@@ -107,6 +107,10 @@ class lpoDB():
             yield dict(row)
 
     def _update_data_for_date(self, date, partial):
+        '''
+        # This method uses lpoWeb module to retrieve data for specified date and
+        insert them into new DB entry.
+        '''
         if partial:
             self.db.execute('DELETE FROM {} WHERE Date'.format(self.table, date.strftime('%Y%m%d')))
             self.db.commit()
