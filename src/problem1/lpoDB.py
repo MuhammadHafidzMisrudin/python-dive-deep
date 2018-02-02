@@ -112,6 +112,8 @@ class lpoDB():
         insert them into new DB entry.
         NOTE - use partial parameter to specify if entry already exists.
         '''
+
+        ### 1 - this clears out any partial data for this entry.
         if partial:
             self.db.execute('DELETE FROM {} WHERE Date'.format(self.table, date.strftime('%Y%m%d')))
             self.db.commit()
