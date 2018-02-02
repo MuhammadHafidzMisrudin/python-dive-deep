@@ -110,6 +110,7 @@ class lpoDB():
         '''
         # This method uses lpoWeb module to retrieve data for specified date and
         insert them into new DB entry.
+        NOTE - use partial parameter to specify if entry already exists.
         '''
         if partial:
             self.db.execute('DELETE FROM {} WHERE Date'.format(self.table, date.strftime('%Y%m%d')))
