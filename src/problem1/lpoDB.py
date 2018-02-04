@@ -136,6 +136,9 @@ class lpoDB():
         self.db.commit()
 
     def clear(self):
+        '''
+        # Clears out the database by dropping the current table.
+        '''
         self.db.execute('DROP TABLE IF EXISTS {}'.format(self.table))
 
     def close(self):
