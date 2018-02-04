@@ -142,7 +142,8 @@ class lpoDB():
         self.db.execute('DROP TABLE IF EXISTS {}'.format(self.table))
 
     def close(self):
-        pass
+        self.db.close()
+        del self.filename
 
 def test():
     pass
