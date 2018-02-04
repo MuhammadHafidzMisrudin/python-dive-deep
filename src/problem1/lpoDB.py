@@ -136,7 +136,7 @@ class lpoDB():
         self.db.commit()
 
     def clear(self):
-        pass
+        self.db.execute('DROP TABLE IF EXISTS {}')
 
     def close(self):
         pass
