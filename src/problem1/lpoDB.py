@@ -142,6 +142,9 @@ class lpoDB():
         self.db.execute('DROP TABLE IF EXISTS {}'.format(self.table))
 
     def close(self):
+        '''
+        # Safely close down the database connection.
+        '''
         self.db.close()
         del self.filename
 
