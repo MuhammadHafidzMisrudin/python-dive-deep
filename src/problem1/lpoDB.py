@@ -152,4 +152,6 @@ def test():
     db =  lpoDB(filename = 'test.db', table = 'Test')
     db.clear()
     db.close()
+
+    db = lpoDB(filename = 'test.db', table = 'Test')
     return None
