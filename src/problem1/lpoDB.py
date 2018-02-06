@@ -149,4 +149,7 @@ class lpoDB():
         del self.filename
 
 def test():
-    pass
+    db =  lpoDB(filename = 'test.db', table = 'Test')
+    db.clear()
+    db.close()
+    return None
