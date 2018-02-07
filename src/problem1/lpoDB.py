@@ -162,6 +162,7 @@ def test():
         db._update_data_for_date(date.today(), False)
     except:
         print('ERROR in lpoDB.test(): Could not retrieve data for today\n')
-    else:
-        pass
-    return None
+
+    for entry in db:
+        print(entry)
+    db.close()
