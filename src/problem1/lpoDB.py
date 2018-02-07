@@ -154,4 +154,7 @@ def test():
     db.close()
 
     db = lpoDB(filename = 'test.db', table = 'Test')
+
+    if dict(db) != {}:
+        print('Error in lpoDB test(): Database is not empty.')
     return None
