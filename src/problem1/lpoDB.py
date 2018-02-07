@@ -157,4 +157,11 @@ def test():
 
     if dict(db) != {}:
         print('Error in lpoDB test(): Database is not empty.')
+
+    try:
+        db._update_data_for_date(date.today(), False)
+    except:
+        print('ERROR in lpoDB.test(): Could not retrieve data for today\n')
+    else:
+        pass
     return None
