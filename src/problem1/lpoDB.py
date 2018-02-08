@@ -174,3 +174,6 @@ def test():
     for entry in db:
         print(entry)
     db.close() # close the connection of db.
+
+if __name__ == '__main__':
+    test()
