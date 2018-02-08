@@ -149,6 +149,9 @@ class lpoDB():
         del self.filename
 
 def test():
+    '''
+    # Method: a simple test routine.
+    '''
     db =  lpoDB(filename = 'test.db', table = 'Test')
     db.clear()
     db.close()
