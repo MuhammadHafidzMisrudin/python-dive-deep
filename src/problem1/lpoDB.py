@@ -176,4 +176,5 @@ def test():
     db.close() # close the connection of db.
 
 if __name__ == '__main__':
+    ### 1 - if this module (the source file) is run as main, it will execute the test routine. 
     test()
