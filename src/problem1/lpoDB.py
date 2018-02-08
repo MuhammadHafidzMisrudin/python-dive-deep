@@ -152,15 +152,20 @@ def test():
     '''
     # Method: a simple test routine.
     '''
+
+    ### 1 - create/clear/close to empty db before testing.
     db =  lpoDB(filename = 'test.db', table = 'Test')
     db.clear()
     db.close()
 
+    ### 2 - This is to create db for testing.
     db = lpoDB(filename = 'test.db', table = 'Test')
 
+    ### 3 - This is to verify that the db is empty.
     if dict(db) != {}:
         print('Error in lpoDB test(): Database is not empty.')
 
+    ### 4 - add data for current date.
     try:
         db._update_data_for_date(date.today(), False)
     except:
@@ -168,4 +173,4 @@ def test():
 
     for entry in db:
         print(entry)
-    db.close()
+    db.close() # close the connection of db.
