@@ -10,6 +10,7 @@ def get_data_for_date(date):
         return _get_data_post2006(date)
 
 def _get_data_pre2007(date):
+    url = '{}/Environmental_Data_{}.txt'.format(BASE_URL, date.year)
     pass
 
 def _get_data_post2006(date):
