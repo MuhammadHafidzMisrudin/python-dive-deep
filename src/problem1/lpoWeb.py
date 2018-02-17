@@ -21,7 +21,7 @@ def _get_data_pre2007(date):
     try:
         year_data = request.urlopen(url).read().decode(encoding='utf_8').split('\n')
     except:
-        raise
+        raise ValueError(date)
     else:
         pass
     pass
