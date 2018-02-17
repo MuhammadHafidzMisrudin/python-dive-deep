@@ -8,6 +8,7 @@ def get_data_for_date(date):
     Returns an generator object of data for the specified date.
     Output data is formatted as a dict.
     """
+
     if date.year < 2007:
         return _get_data_pre2007(date)
     else:
@@ -16,6 +17,13 @@ def get_data_for_date(date):
 def _get_data_pre2007(date):
     url = '{}/Environmental_Data_{}.txt'.format(BASE_URL, date.year)
     print('Fetching online data for {} (full year)'.format(date.year))
+
+    try:
+        year_data = request.urlopen(url).read().decode(encoding='utf_8').split('\n')
+    except:
+        raise
+    else:
+        pass
     pass
 
 def _get_data_post2006(date):
