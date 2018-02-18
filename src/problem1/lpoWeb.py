@@ -23,7 +23,7 @@ def _get_data_pre2007(date):
     except:
         raise ValueError(date)
     else:
-        pass
+        year_data.pop(0)
     pass
 
 def _get_data_post2006(date):
