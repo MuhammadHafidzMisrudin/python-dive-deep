@@ -23,7 +23,7 @@ def _get_data_pre2007(date):
     try:
         year_data = request.urlopen(url).read().decode(encoding='utf_8').split('\n')
     except:
-        raise ValueError(date)
+        raise ValueError(date) # raise error accessing website.
     else:
         year_data.pop(0)
     pass
