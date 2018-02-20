@@ -25,7 +25,7 @@ def _get_data_pre2007(date):
     except:
         raise ValueError(date) # raise error accessing website.
     else:
-        year_data.pop(0)
+        year_data.pop(0) # remove first item which contains column header info.
     pass
 
 def _get_data_post2006(date):
