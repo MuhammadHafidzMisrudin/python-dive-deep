@@ -5,7 +5,7 @@ BASE_URL = 'http://lpo.dt.navy.mil/data/DM'
 
 def get_data_for_date(date):
     """
-    Returns an generator object of data for the specified date.
+    # Returns an generator object of data for the specified date.
     Output data is formatted as a dict.
     """
 
@@ -15,6 +15,13 @@ def get_data_for_date(date):
         return _get_data_post2006(date)
 
 def _get_data_pre2007(date):
+    """
+    # Access the LPO website to retrieve data for the specified date.
+    For dates from 2002 to 2006, data is downloaded for the full year.
+    The method operates as a generator object containing dictionaries
+    with result data.
+    """
+    
     ### 1 - this builds the url based on year.
     url = '{}/Environmental_Data_{}.txt'.format(BASE_URL, date.year)
     print('Fetching online data for {} (full year)'.format(date.year))
