@@ -21,7 +21,7 @@ def _get_data_pre2007(date):
     The method operates as a generator object containing dictionaries
     with result data.
     """
-    
+
     ### 1 - this builds the url based on year.
     url = '{}/Environmental_Data_{}.txt'.format(BASE_URL, date.year)
     print('Fetching online data for {} (full year)'.format(date.year))
@@ -39,6 +39,7 @@ def _get_data_pre2007(date):
 
 def _get_data_post2006(date):
     url = '{}/{}/{}/'.format(BASE_URL, date.year, str(date).replace('-','_'))
+    data = dict(Air_Temp = [], Barometric_Press = [], Wind_Speed = [])
     return None
 
 def _test():
