@@ -40,6 +40,7 @@ def _get_data_pre2007(date):
 def _get_data_post2006(date):
     url = '{}/{}/{}/'.format(BASE_URL, date.year, str(date).replace('-','_'))
     data = dict(Air_Temp = [], Barometric_Press = [], Wind_Speed = [])
+    print('Fetching online data for {}'.format(data))
     return None
 
 def _test():
