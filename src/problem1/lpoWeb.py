@@ -47,7 +47,7 @@ def _get_data_post2006(date):
         except:
             raise ValueError(data)
         else:
-            pass
+            data[key].pop()
     return None
 
 def _test():
