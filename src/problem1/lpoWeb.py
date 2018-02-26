@@ -44,8 +44,8 @@ def _get_data_post2006(date):
     for key in data.keys():
         try:
             data[key] = request.urlopen('{}{}'.format(url, key)).read().decode(encoding='utf_8').split('\r\n')
-        except Exception as e:
-            raise
+        except:
+            raise ValueError(data)
         else:
             pass
     return None
