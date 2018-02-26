@@ -41,6 +41,13 @@ def _get_data_post2006(date):
     url = '{}/{}/{}/'.format(BASE_URL, date.year, str(date).replace('-','_'))
     data = dict(Air_Temp = [], Barometric_Press = [], Wind_Speed = [])
     print('Fetching online data for {}'.format(data))
+    for key in data.keys():
+        try:
+            pass
+        except Exception as e:
+            raise
+        else:
+            pass
     return None
 
 def _test():
