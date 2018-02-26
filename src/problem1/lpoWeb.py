@@ -43,7 +43,7 @@ def _get_data_post2006(date):
     print('Fetching online data for {}'.format(data))
     for key in data.keys():
         try:
-            pass
+            data[key] = request.urlopen('{}{}'.format(url, key)).read().decode(encoding='utf_8').split('\r\n')
         except Exception as e:
             raise
         else:
