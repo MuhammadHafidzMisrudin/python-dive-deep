@@ -48,6 +48,8 @@ def _get_data_post2006(date):
             raise ValueError(data)
         else:
             data[key].pop()
+
+    lengths = []
     return None
 
 def _test():
