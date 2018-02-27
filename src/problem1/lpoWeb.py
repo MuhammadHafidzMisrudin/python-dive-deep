@@ -50,6 +50,8 @@ def _get_data_post2006(date):
             data[key].pop()
 
     lengths = []
+    for k in data.keys():
+        lengths.append(len(data[k]))
     return None
 
 def _test():
