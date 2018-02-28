@@ -52,6 +52,8 @@ def _get_data_post2006(date):
     lengths = []
     for k in data.keys():
         lengths.append(len(data[k]))
+    if lengths[1:] != lengths[:-1]:
+        raise ValueError(date)
     return None
 
 def _test():
