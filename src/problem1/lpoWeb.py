@@ -38,6 +38,7 @@ def _get_data_pre2007(date):
         yield dict(Date = elements[0], Time = elements[1], Status = 'COMPLETE', Air_Temp = elements[5], Barometric_Press = elements[7], Wind_Speed = elements[2])
 
 def _get_data_post2006(date):
+    ### 1 - build the url based on date & create data container.
     url = '{}/{}/{}/'.format(BASE_URL, date.year, str(date).replace('-','_'))
     data = dict(Air_Temp = [], Barometric_Press = [], Wind_Speed = [])
     print('Fetching online data for {}'.format(data))
