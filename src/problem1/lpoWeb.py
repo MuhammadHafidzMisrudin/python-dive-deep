@@ -55,6 +55,11 @@ def _get_data_post2006(date):
         lengths.append(len(data[k]))
     if lengths[1:] != lengths[:-1]:
         raise ValueError(date)
+
+    for i in range(len(data['Air_Temp'])):
+        timestamps = []
+        for k in data.keys():
+            timestamps.append(data[k][i].split()[1])
     return None
 
 def _test():
