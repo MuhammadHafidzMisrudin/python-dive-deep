@@ -60,6 +60,8 @@ def _get_data_post2006(date):
         timestamps = []
         for k in data.keys():
             timestamps.append(data[k][i].split()[1])
+        if timestamps[1:] != timestamps[:-1]:
+            raise ValueError(date)
     return None
 
 def _test():
