@@ -62,6 +62,9 @@ def _get_data_post2006(date):
             timestamps.append(data[k][i].split()[1])
         if timestamps[1:] != timestamps[:-1]:
             raise ValueError(date)
+
+        yield dict(Date = data['Air_Temp'][i].split()[0],
+                   Time = data['Air_Temp'][i].split()[1])
     return None
 
 def _test():
