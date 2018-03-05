@@ -69,7 +69,6 @@ def _get_data_post2006(date):
                    Air_Temp = data['Air_Temp'][i].split()[2],
                    Barometric_Press = data['Barometric_Press'][i].split()[2],
                    Wind_Speed = data['Wind_Speed'][i].split()[2])
-    return None
 
 def _test():
     pass
