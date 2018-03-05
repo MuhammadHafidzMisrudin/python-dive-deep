@@ -64,7 +64,8 @@ def _get_data_post2006(date):
             raise ValueError(date)
 
         yield dict(Date = data['Air_Temp'][i].split()[0],
-                   Time = data['Air_Temp'][i].split()[1])
+                   Time = data['Air_Temp'][i].split()[1],
+                   Status = 'PARTIAL' if date == date.today() else 'COMPLETE')
     return None
 
 def _test():
