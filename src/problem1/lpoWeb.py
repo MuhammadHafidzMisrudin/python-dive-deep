@@ -5,10 +5,11 @@ BASE_URL = 'http://lpo.dt.navy.mil/data/DM'
 
 def get_data_for_date(date):
     """
-    # Returns an generator object of data for the specified date.
+    # This method returns an generator object of data for the specified date.
     Output data is formatted as a dict.
     """
 
+    ### 1 - use correct accessor methods based on date.
     if date.year < 2007:
         return _get_data_pre2007(date)
     else:
