@@ -42,7 +42,10 @@ def _get_data_pre2007(date):
 
 def _get_data_post2006(date):
     """
-    #
+    # This method is to access the LPO website to retrieve data for the specified date.
+    For dates after 2006, data is downloaded by individual days.
+    The method operates as a generator object containing dictionaries
+    with result data.
     """
 
     ### 1 - build the url based on date & create data container.
