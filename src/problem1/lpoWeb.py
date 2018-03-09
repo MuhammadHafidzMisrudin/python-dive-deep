@@ -58,7 +58,7 @@ def _get_data_post2006(date):
         except:
             raise ValueError(data) # error accessing website.
         else:
-            data[key].pop()
+            data[key].pop() # remove last item which will be an empty string.
 
     lengths = []
     for k in data.keys():
