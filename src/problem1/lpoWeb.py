@@ -56,7 +56,7 @@ def _get_data_post2006(date):
         try:
             data[key] = request.urlopen('{}{}'.format(url, key)).read().decode(encoding='utf_8').split('\r\n')
         except:
-            raise ValueError(data)
+            raise ValueError(data) # error accessing website.
         else:
             data[key].pop()
 
