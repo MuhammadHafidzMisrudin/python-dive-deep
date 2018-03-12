@@ -60,6 +60,7 @@ def _get_data_post2006(date):
         else:
             data[key].pop() # remove last item which will be an empty string.
 
+    ### 2 - to verify lengths of 3 files are equal.
     lengths = []
     for k in data.keys():
         lengths.append(len(data[k]))
