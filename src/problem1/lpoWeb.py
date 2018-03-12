@@ -65,7 +65,7 @@ def _get_data_post2006(date):
     for k in data.keys():
         lengths.append(len(data[k]))
     if lengths[1:] != lengths[:-1]:
-        raise ValueError(date)
+        raise ValueError(date) # raise error when file lengths do not match.
 
     for i in range(len(data['Air_Temp'])):
         timestamps = []
