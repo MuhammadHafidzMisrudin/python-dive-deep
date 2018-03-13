@@ -68,6 +68,8 @@ def _get_data_post2006(date):
         raise ValueError(date) # raise error when file lengths do not match.
 
     for i in range(len(data['Air_Temp'])):
+
+        ### 3 - to verify timestamps are equal for every related entry in 3 files.
         timestamps = []
         for k in data.keys():
             timestamps.append(data[k][i].split()[1])
