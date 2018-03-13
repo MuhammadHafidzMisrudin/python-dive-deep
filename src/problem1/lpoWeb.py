@@ -51,6 +51,7 @@ def _get_data_post2006(date):
     ### 1 - build the url based on date & create data container.
     url = '{}/{}/{}/'.format(BASE_URL, date.year, str(date).replace('-','_'))
     data = dict(Air_Temp = [], Barometric_Press = [], Wind_Speed = [])
+
     print('Fetching online data for {}'.format(data))
     for key in data.keys():
         try:
@@ -74,7 +75,7 @@ def _get_data_post2006(date):
         for k in data.keys():
             timestamps.append(data[k][i].split()[1])
         if timestamps[1:] != timestamps[:-1]:
-            raise ValueError(date)
+            raise ValueError(date) # raise error for timestamps for fields do not line up.
 
         yield dict(Date = data['Air_Temp'][i].split()[0],
                    Time = data['Air_Temp'][i].split()[1],
