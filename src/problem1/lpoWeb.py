@@ -85,6 +85,9 @@ def _get_data_post2006(date):
                    Wind_Speed = data['Wind_Speed'][i].split()[2])
 
 def _test():
+    """
+    # This method is a simple test routine
+    """
     pass
 
 if __name__ == '__main__':
