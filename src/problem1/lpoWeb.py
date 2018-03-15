@@ -79,7 +79,7 @@ def _get_data_post2006(date):
 
         yield dict(Date = data['Air_Temp'][i].split()[0],
                    Time = data['Air_Temp'][i].split()[1],
-                   Status = 'PARTIAL' if date == date.today() else 'COMPLETE',
+                   Status = 'PARTIAL' if date == date.today() else 'COMPLETE', # assume data from today is incomplete
                    Air_Temp = data['Air_Temp'][i].split()[2],
                    Barometric_Press = data['Barometric_Press'][i].split()[2],
                    Wind_Speed = data['Wind_Speed'][i].split()[2])
