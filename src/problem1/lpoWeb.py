@@ -90,7 +90,8 @@ def _test():
     """
     for data in get_data_for_date(date=.today()):
         print(data)
-    pass
+    for data in get_data_for_date(date(2002, 1, 1)):
+        print(data)
 
 if __name__ == '__main__':
     _test()
