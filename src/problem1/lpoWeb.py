@@ -88,6 +88,8 @@ def _test():
     """
     # This method is a simple test routine
     """
+    for data in get_data_for_date(date=.today()):
+        print(data)
     pass
 
 if __name__ == '__main__':
