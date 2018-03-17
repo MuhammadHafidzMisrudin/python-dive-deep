@@ -89,9 +89,11 @@ def _test():
     # This method is a simple test routine
     """
 
-    ### 1 - Print data for today's date - tests accessor method post-2006
+    ### 1 - Print data for today's date - tests accessor method post-2006.
     for data in get_data_for_date(date.today()):
         print(data)
+
+    ### 2 - Print data for date for 2002 - tests accessor method pre-2007.
     for data in get_data_for_date(date(2002, 1, 1)):
         print(data)
 
