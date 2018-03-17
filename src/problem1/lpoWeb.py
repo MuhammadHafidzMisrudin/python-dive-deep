@@ -79,7 +79,7 @@ def _get_data_post2006(date):
 
         yield dict(Date = data['Air_Temp'][i].split()[0],
                    Time = data['Air_Temp'][i].split()[1],
-                   Status = 'PARTIAL' if date == date.today() else 'COMPLETE', # assume data from today is incomplete
+                   Status = 'PARTIAL' if date == date.today() else 'COMPLETE', # assume data from today is incomplete.
                    Air_Temp = data['Air_Temp'][i].split()[2],
                    Barometric_Press = data['Barometric_Press'][i].split()[2],
                    Wind_Speed = data['Wind_Speed'][i].split()[2])
@@ -88,7 +88,9 @@ def _test():
     """
     # This method is a simple test routine
     """
-    for data in get_data_for_date(date=.today()):
+
+    ### 1 - Print data for today's date - tests accessor method post-2006
+    for data in get_data_for_date(date.today()):
         print(data)
     for data in get_data_for_date(date(2002, 1, 1)):
         print(data)
