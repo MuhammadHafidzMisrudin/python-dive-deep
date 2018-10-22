@@ -127,7 +127,7 @@ class lpoDB():
 
         for entry in data:
             self.db.execute('''INSERT INTO {} (Date, Time, Status, Air_Temp, Barometric_Press, Wind_Speed)
-                               VALUES (?, ?, ?, ?, ?, ?)'''.format(self.table), (entry['Date'].replace("_", "")
+                               VALUES (?, ?, ?, ?, ?, ?)'''.format(self.table), (entry['Date'].replace("_", ""),
                                                                                  entry['Time'],
                                                                                  entry['Status'],
                                                                                  entry['Air_Temp'],
@@ -176,5 +176,5 @@ def test():
     db.close() # close the connection of db.
 
 if __name__ == '__main__':
-    ### 1 - if this module (the source file) is run as main, it will execute the test routine. 
+    ### 1 - if this module (the source file) is run as main, it will execute the test routine.
     test()
