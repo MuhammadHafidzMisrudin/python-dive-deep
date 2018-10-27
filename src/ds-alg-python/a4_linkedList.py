@@ -26,6 +26,24 @@ class SingleLinkedList(object):
         newNode.nextNode = self.headVal
         self.headVal = newNode
 
+    def add_node_at_end(self, newData):
+
+        # Create a new node element.
+        newNode = Node(newData)
+
+        # Check if there is head first node element, set a new node.
+        if self.headVal is None:
+            self.headVal = newNode
+            return
+
+        # Set the last node element as head data node.
+        lastValNode = self.headVal
+        while (lastValNode.nextNode):
+            lastValNode = lastValNode.nextNode
+
+        # Link the last node element to the new data node element.
+        lastValNode.nextNode = newNode
+
 
     def get_size_linked_list(self):
         return self.size
@@ -66,7 +84,11 @@ def main():
     # Link second node element to third node element.
     elVal2.nextNode = elVal3
 
+    # The new data element is inserted at the beginning.
     myLinkedList.add_node_at_beginning('Baby')
+
+    # The new data element is inserted at the end.
+    myLinkedList.add_node_at_end('Isabelle')
 
     print('\n')
     # Print out a Linked List and its size.
