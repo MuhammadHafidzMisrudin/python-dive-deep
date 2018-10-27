@@ -1,6 +1,6 @@
 class Queue(object):
     """docstring for Queue."""
-    #Constructor creates a list.
+    # Constructor creates a list.
     def __init__(self):
         super(Queue, self).__init__()
         self.queue = list()
@@ -24,8 +24,6 @@ class Queue(object):
     # Display the elements of the queue.
     def display_queue(self):
         return self.queue
-
-
 
 
 def main():
