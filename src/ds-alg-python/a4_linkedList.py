@@ -2,10 +2,10 @@ class Node(object):
     """docstring for Node."""
 
     # Constructor creates a Node.
-    def __init__(self, dataVal, nextNode=None):
+    def __init__(self, dataVal=None):
         super(Node, self).__init__()
         self.dataVal = dataVal
-        self.nextNode = nextNode
+        self.nextNode = None
 
 class SingleLinkedList(object):
     """docstring for SingleLinkedList."""
@@ -16,6 +16,20 @@ class SingleLinkedList(object):
         self.headVal = headVal
         self.size = 0
 
+    # Inserting at the Beginning of the Linked List.
+    def add_node_at_beginning(self, newData):
+
+        # Create a new node element.
+        newNode = Node(newData)
+
+        # Update the new nodes next val to existing node (head).
+        newNode.nextNode = self.headVal
+        self.headVal = newNode
+
+
+    def get_size_linked_list(self):
+        return self.size
+
     # Traversing a Linked List and Print List.
     def print_linked_list(self):
 
@@ -24,12 +38,14 @@ class SingleLinkedList(object):
 
         # Loop through each node in a list if not empty.
         while eachNode is not None:
-            print(eachNode.dataVal)
+            print('node {0} = {1}'.format(eachNode, eachNode.dataVal))
             eachNode = eachNode.nextNode
+            self.size += 1
 
 
 
 def main():
+    print(end='\n')
     print("python3: implement LinkedList Data Structure.")
 
     # Create a Linked List object.
@@ -50,8 +66,12 @@ def main():
     # Link second node element to third node element.
     elVal2.nextNode = elVal3
 
-    # Print out a Linked List.
+    myLinkedList.add_node_at_beginning('Baby')
+
+    print('\n')
+    # Print out a Linked List and its size.
     myLinkedList.print_linked_list()
+    print('current size of LinkedList = {0}'.format(myLinkedList.get_size_linked_list()))
 
 
 if __name__ == '__main__':
