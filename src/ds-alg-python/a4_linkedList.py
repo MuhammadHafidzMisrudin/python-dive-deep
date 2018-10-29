@@ -91,6 +91,7 @@ def main():
     myLinkedList.add_node_at_end('Isabelle')
 
     print('\n')
+    
     # Print out a Linked List and its size.
     myLinkedList.print_linked_list()
     print('current size of LinkedList = {0}'.format(myLinkedList.get_size_linked_list()))
