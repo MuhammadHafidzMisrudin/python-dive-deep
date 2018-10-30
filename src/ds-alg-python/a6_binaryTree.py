@@ -11,6 +11,7 @@ class Node(object):
         self.left = None
         self.right = None
 
+    # Inset data element to the node.
     def insert_data(self, data):
         # Compare the new value with the parent node.
         if self.data:
@@ -33,12 +34,24 @@ class Node(object):
         else:
             self.data = data
 
+    # Print data elements of the nodes.
     def print_tree(self):
         if self.left:
             self.left.print_tree()
         print('node = {0}'.format(self.data))
         if self.right:
             self.right.print_tree()
+
+    # In-order traversal.
+    # Left -> Root -> Right.
+    def inorderTraversal(self, rootData):
+        visitNodes = []
+        if rootData:
+            visitNodes = self.inorderTraversal(rootData.left)
+            visitNodes.append(rootData.data)
+            print('current node(s) => ',format(visitNodes))
+            visitNodes = visitNodes + self.inorderTraversal(rootData.right)
+        return visitNodes
 
 
 
@@ -52,6 +65,10 @@ def main():
     rootNode.insert_data(2)
     rootNode.insert_data(50)
     rootNode.print_tree()
+
+    print(end='\n')
+    print("In-order Traversal:")
+    print(rootNode.inorderTraversal(rootNode))
 
     print(end='\n')
 
