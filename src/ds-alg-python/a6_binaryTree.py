@@ -1,7 +1,6 @@
 class Node(object):
     """docstring for Node."""
 
-
     # A Python class that represents an individual node
     # in a Binary Tree.
     # Initialise nodes.

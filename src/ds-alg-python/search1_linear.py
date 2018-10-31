@@ -1,4 +1,3 @@
-
 def linear_search(array, key_data):
 
     foundData = 0
